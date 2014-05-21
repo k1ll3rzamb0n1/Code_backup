@@ -1,0 +1,38 @@
+m = y2-y1 / x2-x1
+y = m(x - x1) + y1
+
+6000 rpm Dimpled Ball
+
+Velocity : Drag Coefficient
+13 : .55
+20 : .48
+30 : .4
+40 : .35
+60 : .3
+80 : .29
+
+Velocity : Lift Coefficient
+13 : .45
+20 : .41
+30 : .35
+40 : .3
+60 : .225
+80 : .19
+
+3000 rpm Dimpled Ball
+
+Velocity : Drag Coefficient
+13 : .41
+20 : .38
+30 : .3
+40 : .28
+60 : .27
+80 : .27
+
+Velocity : Lift Coefficient
+13 : .299
+20 : .29
+30 : .25
+40 : .19
+60 : .15
+80 : .13

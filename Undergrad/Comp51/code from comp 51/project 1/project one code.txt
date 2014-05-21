@@ -1,0 +1,12 @@
+1>------ Build started: Project: project 1, Configuration: Debug Win32 ------
+1>Compiling...
+1>project 1 code.cpp
+1>Compiling manifest to resources...
+1>Microsoft (R) Windows (R) Resource Compiler Version 6.0.5724.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>Linking...
+1>MSVCRTD.lib(crtexe.obj) : error LNK2019: unresolved external symbol _main referenced in function ___tmainCRTStartup
+1>\\homedirs1\rbleile\Visual Studio 2008\Projects\project 1\Debug\project 1.exe : fatal error LNK1120: 1 unresolved externals
+1>Build log was saved at "file://\\homedirs1\rbleile\Visual Studio 2008\Projects\project 1\Debug\BuildLog.htm"
+1>project 1 - 2 error(s), 0 warning(s)
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

@@ -1,0 +1,3 @@
+Memory Leak -> during pos update (potentially from VPYTHON Library)
+
+Need to upgrade clustering algorithm to full 3D methods (aka OCTREE not QUADTREE)

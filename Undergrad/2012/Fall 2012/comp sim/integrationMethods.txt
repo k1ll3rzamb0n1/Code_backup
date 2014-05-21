@@ -1,0 +1,33 @@
+Integration Methods
+##############################################
+#	Euler									 #
+#	x(t+dt) = x(t) + f'(t,x)*dt				 #
+##############################################
+#	Runge-Kutta								 #
+#	k1 = f'(t,x)*dt							 #
+#	k2 = f'(t+dt/2, x+k1/2)*dt				 #
+#	x(t+dt) = x + k2                         #
+##############################################
+#	Runge Kutta 4							 #
+#	k1 = f'(t,x)*dt							 #
+#	k2 = f'(t+dt/2, x+k1/2)*dt				 #
+#	k3 = f'(t+dt/2, x+k2/2)*dt				 #
+#	k4 = f'(t+dt/2, x+k3/2)*dt				 #
+#	x(t+dt) = x + k1/6 + k2/3 + k3/3 + k4/6  #
+##############################################
+
+
+
+...:- from commet methods -:...
+
+Rx[i+1] = Rx[i] + a*Vx[i] + a*a*.5*Gx[i];
+Ry[i+1] = Ry[i] + a*Vy[i] + a*a*.5*Gy[i];
+
+Rmag = sqrt( Rx[i+1]*Rx[i+1] + Ry[i+1]*Ry[i+1] );
+
+Gx[i+1] = -Gconst*Rx[i+1]/pow(Rmag, 3);
+Gy[i+1] = -Gconst*Ry[i+1]/pow(Rmag, 3);
+
+Vx[i+1] = Vx[i]+a*(Gx[i+1]+Gx[i])*.5;
+Vy[i+1] = Vy[i]+a*(Gy[i+1]+Gy[i])*.5;
+

@@ -1,0 +1,56 @@
+more on linked list:
+
+for linked lists = another
+
+LinkedList<int> L2 = L1;
+
+only the head is copied so that both l1 and l2 point at same list
+shallow copy*
+
+L2 = L1
+left side = new one,  right side = old one
+
+ 
+Copy Constructor:
+LinkedList(LinkedList& rightSide);
+
+
+Destructor:
+~LinkedList();
+
+
+
+
+~LinkledList()
+{
+	while(head != NULL)
+	{
+		Node<T>* temp = head;
+		head = head->getNext();
+		delete temp;
+	}
+}
+
+LinkedList(LinkedLIst& rightSide)
+{
+	Node* copyPtr = rightSide.getHead();
+	if(copyPtr == NULL)
+		return;
+	
+	head = new Node(copyPtr->getData(), NULL);
+	
+	copyPtr = copyPtr->getNext();
+	
+	Node* myPtr = head;
+
+	while(copyPtr != NULL)
+	{
+		myPtr->setNext(newNode(copyPtr->getData(), NULL))
+		copyPtr = copyPtr->getNext();
+		myPtr = myPtr->getNext();
+	}
+}
+
+
+
+

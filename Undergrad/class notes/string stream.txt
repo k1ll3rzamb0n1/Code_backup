@@ -1,0 +1,20 @@
+#include<string>
+#include<iostream>
+#include<sstream>    // string stream
+
+int main()
+{
+ string s = "Hello world my name is HAL";
+srting sstr(s);
+string token;
+while(sstr >> token) // breaks at each space
+{
+cout << "Next word is" << token << endl;
+}
+
+while(getline(sstr, token, '|') // reads in each section and breaks at |'s
+
+
+
+
+

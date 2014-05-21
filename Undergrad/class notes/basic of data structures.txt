@@ -1,0 +1,12 @@
+Data Structures
+
+linear and non linear types
+
+linear is more common
+
+linear-
+direct access - Example: array - hashtables
+sequential access - Example: linked list - stack queue
+
+non linear-
+hierarchial - Example: tree - heap

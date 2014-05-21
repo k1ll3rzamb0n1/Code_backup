@@ -1,0 +1,133 @@
+HEAPS - Non Linear
+
+
+heaps always maintain a full tree. 
+does not add new leaves row untill previeous is full
+
+heaps are only semi-sorted
+
+everything in branches is lower than one b4 it - in tree
+
+stored in straight line though consptually is a tree structure
+
+children are stored at lchild(2 * location) && rchild(2 * location + 1)
+
+to go from child to parent interger devide by 2
+
+
+
+
+# include //vector class
+
+class Heap
+{
+	protected:
+		vector<int> elems;
+	public:
+		
+		Heap()
+		{
+		 elems.pushback(-999);    // dummy value to plac hold position 0 so that we do not use that space
+		}
+
+		void print ()
+		{
+			for(int i = 1; i < elems.size(); i++)
+			{
+				cout << elems[i] << endl; 
+			}
+		}
+
+
+		void insert(int item)    O(log N)
+		{
+			elems.push_back(item);
+			int index = elems.size() - 1;
+			while(index > 1)
+			{
+				if(elems[index] > elems[index/2])   // you are bigger than your parent
+				{
+					swap(elems[index], elems[index/2])
+				}
+				
+				index = index / 2;   
+			}
+		
+		}
+		
+		
+		int remove() - O(log N)
+		{
+			int top;
+			if(elems.size() == 1)
+			{
+				return -999;   // aka heap is empty
+			}
+			else if(elems.size() == 2)
+			{
+				top = elems[1];
+				elems.pop_back();
+				return top;
+			}
+			else
+			{
+				top = elems[1];
+				elems[1] = elems[elems.size()-1];
+				elems.pop_back();
+				fixHeap();
+				return top;
+			}
+		}
+		
+		int LIndex(int i)
+		{
+			return 2*i;
+		}
+		int RIndex(int i)
+		{
+			return(2*i) + 1;
+		}
+
+		void fixHeap()
+		{
+			int index = 1, last = elems.size()-1;
+			bool needFix = true;
+			while(needFix)
+			{
+				if(last < LIndex(index))
+				{
+					needFix = false;
+				}
+
+				else if( RIndex(index) <= last  &&  elem[RIndex(index)] > elems[LIndex(index)] )  // right child big
+				{
+					int right = RIndex(index);
+					if(elems[index] >= elems[right])
+					{
+					needFix = false;
+					}
+					else
+					{
+						swap(elems[index], elsems[right]);
+						index = right;
+					}
+				}
+				else  // left only or left bigger
+				{
+					int left = LIndex(index);
+					if(elems[left] > elems[index])
+					{
+						swap(elems[left], elems[index])
+						index = left;
+					}
+					else 
+					needFix = false;	
+				}
+			}
+		}
+
+
+
+
+
+

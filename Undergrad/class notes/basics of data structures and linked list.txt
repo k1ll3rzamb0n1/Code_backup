@@ -1,0 +1,127 @@
+linked list data structures & the basics of implimenting:
+
+basic functions of data structures:
+	Print
+	Search
+	Insert
+	Remove
+
+Array of variable all the same type all stored next to each other in memory
+[7][8][11][14][17][21]
+{0}{1}{ 2}{ 3}{ 4}{ 5}
+each item can be accessed directly
+arrays must have an exact size
+
+linked list however expands as you add data
+each space hold the data plus a pointer to te next item
+since each item is allocated seperatly
+[7] -> [8] -> [11] -> {...}
+must follow links to get to items
+has a head pointer at the beginning
+last item points to null so you know its the last item
+
+linked list class in two classes:
+
+node class;
+
+template<class T>
+class Node
+{
+	private:
+		T data;
+		Node<T>* next;   // pointer to the next node
+	public:
+		Node();
+		Node(T data, Node<T>* n = NULL)  // this mean i can give it one or two parameters. if one null is the value of next. if two n is value of next 
+			{
+				data = d;
+				next = n;
+			}
+		void setData(T d);
+		T getData();
+		void setNext(Node<T>* n);
+		Node<T>* getNext();
+};
+
+list class
+
+template<class T>
+class LinkedList
+{
+	private:
+		Node<T>* head;
+	public:
+		// four main functions skipping generals
+		
+		void print()
+		{
+			if(head == NULL)
+				cout << "{}";
+			else
+			cout << "{";
+			Node<T>* cur = head;
+			while(cur != NULL)
+			{
+				cout << cur->getDate() << " ";
+				cur = cur->getNext();
+			}
+			cout << "\b}";  // \b is the backspace equivalent. deletes last character
+		}
+
+
+		Node<T>*search(T item)
+		{
+			if(head == NULL)
+				return NULL;
+			Node<T>* cur = head;
+			while(cur != NULL)
+			{
+				if(cur->getData() == item)
+				return cur;
+				cur = cur->getNext();
+			}
+			return NULL;
+		}
+
+
+		void prepend(T item)      // insert into front
+		{
+			head = new Node<T>(item, head);   // creates a new node, sets next to address stored in head, sets hed to address of the new node
+		}
+
+
+		void insert(T item)
+		{
+			if ( head == NULL)
+				prepend(item);
+			else if ( item <= head->getData())
+				prepend(item);
+			else
+			Node*<T> cur = head;
+			while(cur->getNext() != NULL && item > cur->getNext()->getData())  // this order is important; if written othert way around it would check get next get data which at null would crash program
+			{
+				cur = cur->getNext();
+			}
+			cur->setNext(new Node<t>(item,cur->getNext()));
+		}
+
+		
+		void remove(T item)
+		{
+			Node<T>* toDel = search(item);
+			if(toDel == NULL)
+				return;
+			if(item == head->getData())
+				head = head->getNext();
+			else
+			{
+			Node<T>* cur = head;
+			while(cur->getNext()->getData() != item)
+			{
+				cur = cur->getNext();
+			}
+			cur->setNext(toDel->getNext());
+			}
+			delete toDel;
+			remove(item);   // recursively calls function to remove all of the like item/ is optional. without recursion will remove the first occurace of the item.
+		}

@@ -1,0 +1,132 @@
+rules to read in and store...
+
+<Actor> -> a girl | the librarian;
+<Verb> -> waved to | kicked;
+<sentence> -> <Actor> <Verb> <Actor>;
+
+left of arrow = key
+right of arrow = data
+
+
+
+
+
+
+class Hashtable
+{
+protected:
+	HNode* table;
+	int size;
+	int hash(int key);
+public:
+	Hashtable(int s);
+	~Hashtable();
+	Hashtable(Hashtable& toCopy);
+	void print();
+	Student search(int id);
+	void insert(Student s);
+	void remove(int id);
+};
+
+#endif
+
+
+
+
+Hashtable::Hashtable(int s = 10)
+{
+	if (s > 0)
+	{
+		table = new HNode[s];
+		size = s;
+	}
+	else
+	{
+		table = new HNode[10];
+		size = 10;
+	}
+}
+
+Hashtable::~Hashtable()
+{
+	delete [] table;
+}
+
+Hashtable::Hashtable(Hashtable& toCopy)
+{
+	size = toCopy.size;
+	table = new HNode[size];
+	for (int i = 0; i < size; i++)
+		table[i] = toCopy.table[i];
+}
+
+int Hashtable::hash(int key)
+{
+	return key% size;
+}
+
+void Hashtable::print()
+{  
+	HNode* cur = table;
+	cout << " \n\n\nD";
+	for(int j=0 ;j<size ;j++)
+	{
+		cout << j;
+		if(cur->getKey() !=-1)
+			cout<< j << ": " << cur->getData() <<endl;
+		cur++;
+	}
+}
+
+void Hashtable::insert (Student s)
+{
+	int index = hash(s.getID());
+	if(table[index].getKey() == -1)
+	{
+		table[index].setData(s);
+		table[index].setKey(s.getID());
+		return;
+	}
+	for(int i = (index+1)%size; i == index; i = (i+1)%size)
+	{
+		if(table[i].getKey() == -1)
+		{
+			table[i].setData(s);
+			table[i].setKey(s.getID());
+			return;
+		}
+	}
+	cout << "Table full";
+}
+
+Student Hashtable::search(int id)
+{
+	int index = hash(id);
+	if(table[index].getKey() == -1)
+	{
+		return table[index].getData();
+	}
+	for(int i = (index+1)%size; i == index; i = (i+1)%size)
+	{
+		if(table[i].getKey() == -1)
+		{
+		return table[index].getData();
+		}
+	}
+}
+
+void Hashtable::remove(int id)
+{
+	int index = hash(id);
+	if(table[index].getKey() == -1)
+	{
+		table[index].setKey(-1);
+	}
+	for(int i = (index+1)%size; i == index; i = (i+1)%size)
+	{
+		if(table[i].getKey() == -1)
+		{
+			table[i].setKey(-1);
+		}
+	}
+}

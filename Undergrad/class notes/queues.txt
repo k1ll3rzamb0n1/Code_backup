@@ -1,0 +1,25 @@
+Queues    FIFO  --  first in first out    (aka standing in a line)
+
+Two pointers, front and end
+
+insert into end. pop from front
+NO SEARCH FUNCTION
+
+
+void enqueue (T item)     aka insert
+{
+	if ( front == NULL)
+	{
+		front == new Node<T>(item, NULL);
+		back = front;
+	}
+	else
+	{
+	back->setNext(new Node<T>(item, NULL));
+	back = back->getNext();
+	}
+}
+
+pop(remove) -> 	check front == NULL
+	front == back      //  in which case set back to null after ward
+	and all normal cases for pop

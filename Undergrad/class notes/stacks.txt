@@ -1,0 +1,71 @@
+               data Structures
+linear                          nonlinear
+
+direct          sequential
+access          access
+
+array - HT        list
+                     stacks+queues
+
+
+
+
+
+Stacks   LIFO - Last in First Out
+
+print -> almost identical to linked list. 
+
+There is NO --search--
+
+push (aka insert -> or prepend from linked list)
+
+pop ( aka remove)
+
+
+template<class T>
+class Stack
+{
+protected:
+	Node<T>* top;
+public:
+
+
+
+void print()       big O -> N
+{
+Node<T>* temp = top;
+while(temp!=NULL)
+{
+cout<< temp->getData() << endl;
+temp = temp->getNext();
+}
+}
+
+
+
+void push(T item)        big O -> constant,1
+{
+top = new Node<t>(item,top);
+}
+
+T pop()
+{
+if(top==NULL)   // cant pop an empty stack
+{
+exit(0);
+}
+
+NOde<T>* temp = top;
+top = top->getNext();
+T data = temp->getData();
+delete temp;
+return data;
+}
+
+
+
+
+
+}
+
+

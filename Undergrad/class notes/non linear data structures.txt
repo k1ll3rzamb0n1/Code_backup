@@ -1,0 +1,169 @@
+non linear data structures:
+
+trees:
+
+		[1]
+		/ \
+	      [2] [3]
+	      / \ / \	
+	     [4]N[5][6]
+
+n = null;
+all bottom leaves have lchild & rchild = null;
+
+leaves = 4, 5, 6
+root = 1
+
+all standers traversals have left child then right child
+3 standard traversals:
+
+pre-order: data, lchild, rchild
+ would print: 1, 2, 4, 3, 5, 6
+
+in-order: lchild,data,rchild
+ would print: 4, 2, 1, 5, 3, 6    prints out BS-Tree in order - least to greatest
+
+post-order: lchild, rchild, data
+ would print: 4, 2, 5, 6, 3, 1
+
+
+Binary Search Tree:
+1. All to left < root
+2. All to right >= root
+3. all roots of subtrees
+(example above is not a binary search tree) 
+
+
+node class:
+
+template<class T>
+class TNode
+{
+
+protected:
+
+	T data;
+	TNode<T> *lchild, *rchild;
+public:
+
+// all std constructors, accessors, mutators;
+
+	~TNode()
+	{
+		if(lchild != NULL)
+		delete lchild;
+		
+		if(rchild != NULL)
+		delete rchild;
+	}
+
+	void print( )     in-order recursion
+  	{
+		if(lchild!= NULL)
+		{
+		print->lchild;
+		}
+
+		cout << data << endl;
+
+		if(rchild!=NULL)
+		{
+		print->rchild;
+		}
+	}
+
+	
+	bool search( T item)    O(log N) or O(N) depending on if tree is balanced - [wide or vertivle]
+	{
+		if(data == item)
+			return true;
+		if(data < item)
+		{
+			if(lchild == NULL)
+				return false;
+			else
+			{
+			return lchild->search(item);
+			}
+		}
+		else
+		{
+			if(rchild == NULL)
+				return false;
+			else
+				return rchild->search(item);
+		}
+	}
+
+
+	void insert(T item)      order could be log n or N   same as search
+	{
+		if(item < data)
+		{
+			if(lchild == NULL)
+				lchild = new TNode<T>(item,NULL,NULL);
+			else
+				lchild->insert(item);
+		}
+		else
+		{
+			if(rchild == NULL)
+				rchild = new TNode<T>(item,NULL,NULL);
+			else
+				rchild->insert(item);
+		}
+
+	}
+
+
+	
+
+
+};
+
+
+
+
+
+
+Tree Class:
+
+
+template <class T>
+class Tree
+{
+protected:
+
+	TNode<T> *root;
+
+public:
+	~Tree()
+	{
+		if(root != NULL)
+		delete root;
+
+	}
+
+	void print()
+	{
+		if( root != NULL)
+		root->print();
+	}
+
+	bool search( T item)
+	{
+		if(root == NULL)
+			return false;
+		return root->search(item);		
+	}
+	
+
+	void insert(T item)
+	{
+		if(root == NULL)
+		root = new TNode<T>(item,NULL,NULL);
+		else
+		root->insert(item);
+	}
+	
+	

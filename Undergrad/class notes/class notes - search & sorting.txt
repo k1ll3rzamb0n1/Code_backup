@@ -1,0 +1,178 @@
+Linear Search:
+
+template <class T> 
+int linearSearch(int size, T item, T arr[])
+{
+	for(int i = 0; i < size; i++)
+	     {
+		if(arr[i] == item)
+			return i;
+	     }
+	return  -1; // returns -1 if not in array
+}
+
+[O(n) algorithm] // above
+
+
+[O(log2n) algorithm] // below
+
+Binary Search:
+// only works for an ordered array
+
+template <class T>
+int binarySearch(t arr[], T item, int start, int end)
+{
+	int mid = (start + end) / 2;
+
+	if(arr[mid] == item)
+	    return mid;
+
+	if(start == end)
+	    return -1;  // returns -1 if not in array
+
+	if(item < arr[mid])
+	    return binarySearch(arr, item, start, mid-1);
+
+	if(item > arr[mid])
+	    return binarySearch(arr, item, mid+1, end);
+}
+
+
+Selection Sort:
+
+template< class T>
+void selectionSort(T arr[], int size)
+{
+	for(front = 0; front < size-1; front ++)
+		 {
+		   int smallest = front;
+		   for(itn cur = front +1; cur < size; cur ++)
+			{ 
+			   if(arr[smallest]> arr[cur])
+				{
+				  smallest = cur;
+				}
+			}
+		   T temp = arr[front];
+		   arr[front] = arr[smallest];
+		   arr[smallest] = temp;
+		 }
+}
+
+[O(n^2) algorithm] above
+
+[O(n^2) algorithm] below
+
+Bubble Sort:   (very slightly less efficient than selection sort)
+
+template <class T>
+void bubbleSort(T arr[], int size)
+{
+	for(int end = size -1; end > 0; end--)
+	   {
+		for(int cur = 0; cur < end; cur++)
+		   {
+			if ( arr[cur] > arr[cur +1])
+			   {
+				T temp = arr[cur];
+				arr[cur] = arr[cur+1];
+				arr[cur+1] = temp;
+			   }
+		   }
+	   }
+}
+
+
+
+[O(nLog2n)] algorithm: below
+//borken into two funtions to better see what is happening
+
+template <class T>
+void mergeSort(T arr[], int start, end)
+{
+	if(start == end)
+		return;
+	int mid = (start +end) / 2;
+	mergeSort(arr,start,mid);
+	mergeSort(arr,mid+1,end);
+	merge(arr,start,mid,end);
+
+}
+
+template<class T>
+void merge(T arr[], int start, mid, end)
+{
+	T* temp = new T [end - start + 1];
+	int ind1 = start;
+	int ind2 = mid + 1;
+	int tInd = 0;
+	while ( ind 1 <= mid && ind 2 <= end)
+	{
+		if ( arr[ind1] <= arr[ind2])
+		{
+			temp[tInd] = arr[ind1];
+			tInd++;
+			ind1++;
+		}
+		else
+		{
+			temp[tInd] = arr[ind2];
+			tInd++;
+			ind2++;
+		}
+	}
+
+	while(ind1 <= mid)
+	{
+		temp[tInd] = arr[ind1];
+		tInd++;
+		ind1++;
+	}
+
+	while(ind2 <= end)
+	{
+		temp[tInd] = arr[ind2];
+		tInd++;
+		ind1++;
+	}
+
+	for(int i = 0; i < (end - start + 1); i++)
+	{
+		arr[i+start] = temp[i];
+	}
+	
+	delete[] temp;
+}
+  
+
+[O(nLog2n)] algorith: below	
+
+Quick Sort: // two classes to delegate work
+
+template <class T>
+void quickSort(T arr[], int start, int end)
+{
+	if(start == end)
+		return;
+	int p = partition(arr,start,end);
+	quickSort(arr,start,p);
+	quickSort(arr,p+1,end);
+}
+
+template <CLass T>
+int partition(T arr[], int start, int end)
+{
+	T pivot = arr[start];
+	while(start < end)
+	{
+		while(arr[start] <= pivot)
+			start++;
+		while(arr[end] >= pivot)
+			end--;
+		T temp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = temp;
+	}
+	
+	return end;
+}	

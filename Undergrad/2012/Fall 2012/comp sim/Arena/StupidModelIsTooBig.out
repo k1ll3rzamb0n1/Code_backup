@@ -1,0 +1,183 @@
+
+                                      ARENA Simulation Results
+                                       ryan - License: STUDENT
+
+                                  Summary for Replication 1 of 1
+
+Project: Unnamed Project                                             Run execution date :10/22/2012
+Analyst: Gerald                                                      Model revision date:10/22/2012
+
+Replication ended at time      : 2012.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+critical.VATime                             .32642     .00562     .00000     1.0703       2000    
+critical.NVATime                            .00000     .00000     .00000     .00000       2000    
+critical.WaitTime                           .09412     (Corr)     .00000     1.3086       2000    
+critical.TranTime                           .00000     .00000     .00000     .00000       2000    
+critical.OtherTime                          .00000     .00000     .00000     .00000       2000    
+critical.TotalTime                          .42054     .01526     .00000     2.1698       2000    
+in patient.VATime                           .12899     .00279     .05303     .28986       1000    
+in patient.NVATime                          .00000     .00000     .00000     .00000       1000    
+in patient.WaitTime                         .15097     (Corr)     .00000     2.9549       1000    
+in patient.TranTime                         .00000     .00000     .00000     .00000       1000    
+in patient.OtherTime                        .00000     .00000     .00000     .00000       1000    
+in patient.TotalTime                        .27996     (Corr)     .05424     3.0612       1000    
+outpatient.VATime                           .12934     .00278     .05235     .29318       1000    
+outpatient.NVATime                          .00000     .00000     .00000     .00000       1000    
+outpatient.WaitTime                         .38280     .10368     .00000     3.1698       1000    
+outpatient.TranTime                         .00000     .00000     .00000     .00000       1000    
+outpatient.OtherTime                        .00000     .00000     .00000     .00000       1000    
+outpatient.TotalTime                        .51214     .10495     .05235     3.3122       1000    
+serious.VATime                              .77947     (Corr)     .00000     2.1996       2000    
+serious.NVATime                             .00000     .00000     .00000     .00000       2000    
+serious.WaitTime                            .27814     (Corr)     .00000     3.9982       2000    
+serious.TranTime                            .00000     .00000     .00000     .00000       2000    
+serious.OtherTime                           .00000     .00000     .00000     .00000       2000    
+serious.TotalTime                           1.0576     (Corr)     .00000     4.3375       2000    
+moderate.VATime                             .77304     .01165     .00000     2.1259       2000    
+moderate.NVATime                            .00000     .00000     .00000     .00000       2000    
+moderate.WaitTime                           .39148     (Corr)     .00000     7.2060       2000    
+moderate.TranTime                           .00000     .00000     .00000     .00000       2000    
+moderate.OtherTime                          .00000     .00000     .00000     .00000       2000    
+moderate.TotalTime                          1.1645     (Corr)     .00000     8.6931       2000    
+Waiting Room NonCrit Queue.WaitingTime          --         --         --         --          0
+Waiting Room Queue 2.Queue.WaitingTime          --         --         --         --          0
+Doctor Consult Mod.Queue.WaitingTime        .11432     .02650     .00000     1.8781        999    
+Doctor Consult Crit.Queue.WaitingTime       .07427     (Corr)     .00000     1.1837       1000    
+Imaging 1.Queue.WaitingTime                 .00896     (Corr)     .00000     .22953        430    
+Lab 1.Queue.WaitingTime                     .00391     .00301     .00000     .12474        370    
+Imaging 2.Queue.WaitingTime                 .01899     .00653     .00000     .22634        383    
+Lab 2.Queue.WaitingTime                     .00409     .00203     .00000     .12139        422    
+Nurse Prep Crit.Queue.WaitingTime           3.7024E-04 2.8858E-04 .00000     .07253       1000    
+Doctor Consult Serious.Queue.WaitingTime    .06056     .01289     .00000     .70037        999    
+Waiting Room Critical Queue.WaitingTime         --         --         --         --          0
+Register.Queue.WaitingTime                  .01363     .00255     .00000     .24601       2000    
+Imaging 3.Queue.WaitingTime                 .47474     (Corr)     .00000     3.1698        900    
+Lab 3.Queue.WaitingTime                     .09682     (Corr)     .00000     .99354       1100    
+Seize Standard.Queue.WaitingTime            .05118     .05506     .00000     2.4931       2000    
+Nurse Prep Mod.Queue.WaitingTime            6.1317E-04 4.7428E-04 .00000     .09484        999    
+Nurse Prep Serious.Queue.WaitingTime        4.4638E-04 4.8768E-04 .00000     .09080        999    
+Queue 1.WaitingTime                             --         --         --         --          0
+Queue 3.WaitingTime                             --         --         --         --          0
+Imaging 4.Queue.WaitingTime                 .34167     (Corr)     .00000     6.8155        404    
+Lab 4.Queue.WaitingTime                     .05772     (Corr)     .00000     2.8619        381    
+Seize Room Critical.Queue.WaitingTime       4.0211E-04 8.2693E-04 .00000     .40211       1000    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+critical.WIP                                .41803     (Corr)     .00000     8.0000     .00000    
+in patient.WIP                              .13914     (Corr)     .00000     9.0000     .00000    
+outpatient.WIP                              .25454     (Corr)     .00000     18.000     .00000    
+serious.WIP                                 1.0513     (Corr)     .00000     16.000     .00000    
+moderate.WIP                                1.1575     (Corr)     .00000     21.000     .00000    
+Lab Tech.NumberBusy                         .11323     (Corr)     .00000     1.0000     .00000    
+Lab Tech.NumberScheduled                    1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Lab Tech.Utilization                        .11323     (Corr)     .00000     1.0000     .00000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+Registration.NumberBusy                     .09120     (Corr)     .00000     1.0000     .00000    
+Registration.NumberScheduled                1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Registration.Utilization                    .09120     (Corr)     .00000     1.0000     .00000    
+OR.NumberBusy                               .00000     (Insuf)    .00000     .00000     .00000    
+OR.NumberScheduled                          3.0000     (Insuf)    3.0000     3.0000     3.0000    
+OR.Utilization                              .00000     (Insuf)    .00000     .00000     .00000    
+Nurse.NumberBusy                            .15234     (Corr)     .00000     2.0000     .00000    
+Nurse.NumberScheduled                       2.0000     (Insuf)    2.0000     2.0000     2.0000    
+Nurse.Utilization                           .07617     (Corr)     .00000     1.0000     .00000    
+Doctor.NumberBusy                           .27244     (Corr)     .00000     1.0000     .00000    
+Doctor.NumberScheduled                      1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Doctor.Utilization                          .27244     (Corr)     .00000     1.0000     .00000    
+Imaging Tech.NumberBusy                     .17139     (Corr)     .00000     1.0000     .00000    
+Imaging Tech.NumberScheduled                1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Imaging Tech.Utilization                    .17139     (Corr)     .00000     1.0000     .00000    
+standard room.NumberBusy                    .91418     (Corr)     .00000     6.0000     .00000    
+standard room.NumberScheduled               6.0000     (Insuf)    6.0000     6.0000     6.0000    
+standard room.Utilization                   .15236     (Corr)     .00000     1.0000     .00000    
+trauma room.NumberBusy                      .35646     (Corr)     .00000     2.0000     .00000    
+trauma room.NumberScheduled                 2.0000     (Insuf)    2.0000     2.0000     2.0000    
+trauma room.Utilization                     .17823     (Corr)     .00000     1.0000     .00000    
+Waiting Room NonCrit Queue.NumberInQueue    .00000     (Insuf)    .00000     .00000     .00000    
+Waiting Room Queue 2.Queue.NumberInQueue    .00000     (Insuf)    .00000     .00000     .00000    
+Doctor Consult Mod.Queue.NumberInQueue      .05676     (Corr)     .00000     4.0000     .00000    
+Doctor Consult Crit.Queue.NumberInQueue     .03691     (Corr)     .00000     4.0000     .00000    
+Imaging 1.Queue.NumberInQueue               .00191     (Insuf)    .00000     2.0000     .00000    
+Lab 1.Queue.NumberInQueue                   7.1827E-04 (Insuf)    .00000     1.0000     .00000    
+Imaging 2.Queue.NumberInQueue               .00361     (Insuf)    .00000     1.0000     .00000    
+Lab 2.Queue.NumberInQueue                   8.5796E-04 (Insuf)    .00000     1.0000     .00000    
+Nurse Prep Crit.Queue.NumberInQueue         1.8402E-04 (Insuf)    .00000     1.0000     .00000    
+Doctor Consult Serious.Queue.NumberInQueue  .03007     (Corr)     .00000     4.0000     .00000    
+Waiting Room Critical Queue.NumberInQueue   .00000     (Insuf)    .00000     .00000     .00000    
+Register.Queue.NumberInQueue                .01355     (Corr)     .00000     3.0000     .00000    
+Imaging 3.Queue.NumberInQueue               .21236     (Corr)     .00000     18.000     .00000    
+Lab 3.Queue.NumberInQueue                   .05293     (Corr)     .00000     9.0000     .00000    
+Seize Standard.Queue.NumberInQueue          .05087     (Insuf)    .00000     11.000     .00000    
+Nurse Prep Mod.Queue.NumberInQueue          3.0445E-04 (Insuf)    .00000     1.0000     .00000    
+Nurse Prep Serious.Queue.NumberInQueue      2.2164E-04 (Insuf)    .00000     2.0000     .00000    
+Queue 1.NumberInQueue                       .00000     (Insuf)    .00000     .00000     .00000    
+Queue 3.NumberInQueue                       .00000     (Insuf)    .00000     .00000     .00000    
+Imaging 4.Queue.NumberInQueue               .06861     (Insuf)    .00000     6.0000     .00000    
+Lab 4.Queue.NumberInQueue                   .01093     (Insuf)    .00000     3.0000     .00000    
+Seize Room Critical.Queue.NumberInQueue     1.9986E-04 (Insuf)    .00000     1.0000     .00000    
+
+                                             COUNTERS
+
+Identifier                                    Count   Limit
+_____________________________________________________________
+
+Not Found 2                                       0  Infinite
+Not Found Sub                                     0  Infinite
+Number Surgery                                  639  Infinite
+Record Watining Room Full                         0  Infinite
+Total Entities Check In                        3000  Infinite
+Number Admitted                                2013  Infinite
+Not found                                         0  Infinite
+Record Number of Customers Reneging               2  Infinite
+NumberDischarged                                346  Infinite
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+critical.NumberIn                           2000.0    
+critical.NumberOut                          2000.0    
+in patient.NumberIn                         1000.0    
+in patient.NumberOut                        1000.0    
+outpatient.NumberIn                         1000.0    
+outpatient.NumberOut                        1000.0    
+serious.NumberIn                            2000.0    
+serious.NumberOut                           2000.0    
+moderate.NumberIn                           2000.0    
+moderate.NumberOut                          2000.0    
+Lab Tech.NumberSeized                       2273.0    
+Lab Tech.ScheduledUtilization               .11323    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+Registration.NumberSeized                   2000.0    
+Registration.ScheduledUtilization           .09120    
+OR.NumberSeized                             .00000    
+OR.ScheduledUtilization                     .00000    
+Nurse.NumberSeized                          2998.0    
+Nurse.ScheduledUtilization                  .07617    
+Doctor.NumberSeized                         2998.0    
+Doctor.ScheduledUtilization                 .27244    
+Imaging Tech.NumberSeized                   2117.0    
+Imaging Tech.ScheduledUtilization           .17139    
+standard room.NumberSeized                  2114.0    
+standard room.ScheduledUtilization          .15236    
+trauma room.NumberSeized                    884.00    
+trauma room.ScheduledUtilization            .17823    
+System.NumberOut                            8000.0    
+
+
+Simulation run time: 0.15 minutes.
+Simulation run complete.

@@ -1,0 +1,76 @@
+[RESOURCES]
+Lab Tech
+Resource 1
+Registration
+OR
+Nurse
+Doctor
+Imaging Tech
+standard room
+trauma room
+[VARIABLES]
+Create ModED.NumberOut
+idTOSearchFor
+Clean up Mod.NumberOut
+Separate to Create Clone Entity Crit.NumberOut Orig
+Clean up Crit.NumberOut
+Imaging 3.NumberOut
+Separate to Create Clone Entity.NumberOut Dup
+Release Trauma Room.NumberIn
+inpatients back to hospital outpatients go home 2.NumberOut
+Doctor Consult Mod.NumberIn
+Nurse Prep Crit.NumberIn
+Release Standard Room.NumberIn
+Waiting Room Queue.NumberOut
+Lab 2.NumberOut
+Clean up Serious.NumberOut
+Clean up Mod.NumberIn
+Patient treatment Plan.NumberIn
+Decide if imaging.NumberOut True
+Imaging 2.NumberIn
+Imaging 4.NumberIn
+Dispose Leave Waiting Room Without Being Seen.NumberOut
+Doctor Consult Serious.NumberOut
+Release Trauma Room.NumberOut
+Waiting Room Queue.NumberIn
+Register.NumberIn
+Create in patient arrival.NumberOut
+Am Serious Type.NumberOut True
+Release Standard Room.NumberOut
+Lab 2.NumberIn
+Imaging 2.NumberOut
+Lab 4.NumberIn
+Create serious ed arrvial.NumberOut
+Doctor Consult Serious.NumberIn
+inpatients back to hospital outpatients go home 1.NumberOut
+Clean up Crit.NumberIn
+Separate to Create Clone Entity Crit.NumberOut Dup
+Doctor Consult Mod.NumberOut
+Nurse Prep Serious.NumberIn
+Lab 4.NumberOut
+Decide Waiting Room Over Crowded.NumberOut True
+Separate to Create Clone Entity.NumberOut Orig
+Dispose Clones.NumberOut
+Lab 1.NumberOut
+Imaging 4.NumberOut
+Patient treatment Plan.NumberOut
+Nurse Prep Mod.NumberOut
+Create out patient arrival.NumberOut
+Doctor Consult Crit.NumberOut
+Register.NumberOut
+Am Serious Type.NumberOut False
+Imaging 1.NumberOut
+Patient Leaves System.NumberOut
+Imaging 1.NumberIn
+Imaging 3.NumberIn
+Create CritED.NumberOut
+Nurse Prep Mod.NumberIn
+Clean up Serious.NumberIn
+Lab 1.NumberIn
+Lab 3.NumberIn
+Nurse Prep Crit.NumberOut
+Decide Waiting Room Over Crowded.NumberOut False
+Doctor Consult Crit.NumberIn
+Decide if imaging.NumberOut False
+Nurse Prep Serious.NumberOut
+Lab 3.NumberOut

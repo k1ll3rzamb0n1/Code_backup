@@ -1,0 +1,171 @@
+SIMAN Run Controller.
+
+733.80413 Hours>
+                                      ARENA Simulation Results
+                                       ryan - License: STUDENT
+
+                                  Summary for Replication 1 of 1
+
+Project: Unnamed Project                                             Run execution date :10/22/2012
+Analyst: Gerald                                                      Model revision date:10/22/2012
+
+Replication ended at time      : 733.80413 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+critical.VATime                             .00000     .00000     .00000     .00000        711    
+critical.NVATime                            .00000     .00000     .00000     .00000        711    
+critical.WaitTime                           .75435     .02087     .00000     1.9995        711    
+critical.TranTime                           .00000     .00000     .00000     .00000        711    
+critical.OtherTime                          .83451     (Corr)     .00000     1.6666        711    
+critical.TotalTime                          1.5888     .01762     1.0006     2.1166        711    
+in patient.VATime                           .54862     .02831     .00000     1.5676       1515    
+in patient.NVATime                          .00000     .00000     .00000     .00000       1515    
+in patient.WaitTime                         2.5418     .15474     .00000     5.9979       1515    
+in patient.TranTime                         .00000     .00000     .00000     .00000       1515    
+in patient.OtherTime                        .38303     .02138     .00000     1.6133       1515    
+in patient.TotalTime                        3.4735     .12965     .96607     5.9979       1515    
+emergency surgery.VATime                    .53473     .01714     .00000     1.6156        520    
+emergency surgery.NVATime                   .00000     .00000     .00000     .00000        520    
+emergency surgery.WaitTime                  .91115     (Corr)     .00000     1.9993        520    
+emergency surgery.TranTime                  .00000     .00000     .00000     .00000        520    
+emergency surgery.OtherTime                 .33849     .02531     .00000     1.5819        520    
+emergency surgery.TotalTime                 1.7843     (Corr)     1.0073     4.2501        520    
+scheduled surgery.VATime                    .56571     (Insuf)    .00000     1.5606        257    
+scheduled surgery.NVATime                   .00000     (Insuf)    .00000     .00000        257    
+scheduled surgery.WaitTime                  2.3027     (Insuf)    .00000     5.9904        257    
+scheduled surgery.TranTime                  .00000     (Insuf)    .00000     .00000        257    
+scheduled surgery.OtherTime                 .42362     (Insuf)    .00000     1.5656        257    
+scheduled surgery.TotalTime                 3.2921     (Insuf)    1.1288     5.9904        257    
+emergency.VATime                                --         --         --         --          0
+emergency.NVATime                               --         --         --         --          0
+emergency.WaitTime                              --         --         --         --          0
+emergency.TranTime                              --         --         --         --          0
+emergency.OtherTime                             --         --         --         --          0
+emergency.TotalTime                             --         --         --         --          0
+outpatient.VATime                           .55362     .01219     .00000     1.5829       1986    
+outpatient.NVATime                          .00000     .00000     .00000     .00000       1986    
+outpatient.WaitTime                         1.2055     .04370     .00000     1.9997       1986    
+outpatient.TranTime                         .00000     .00000     .00000     .00000       1986    
+outpatient.OtherTime                        .20358     (Corr)     .00000     1.5770       1986    
+outpatient.TotalTime                        1.9627     .03351     .71206     4.4644       1986    
+serious.VATime                              .54441     .01638     .00000     1.5945       1309    
+serious.NVATime                             .00000     .00000     .00000     .00000       1309    
+serious.WaitTime                            1.5444     .06862     .00000     3.9984       1309    
+serious.TranTime                            .00000     .00000     .00000     .00000       1309    
+serious.OtherTime                           .36877     .01698     .00000     1.6068       1309    
+serious.TotalTime                           2.4576     .06267     .85718     4.3999       1309    
+moderate.VATime                             .54445     (Corr)     .00000     1.5829       1134    
+moderate.NVATime                            .00000     .00000     .00000     .00000       1134    
+moderate.WaitTime                           1.4058     (Corr)     .00000     2.9931       1134    
+moderate.TranTime                           .00000     .00000     .00000     .00000       1134    
+moderate.OtherTime                          .37390     .02027     .00000     1.5998       1134    
+moderate.TotalTime                          2.3241     (Corr)     1.0182     4.5649       1134    
+Waiting Room NonCrit Queue.WaitingTime          --         --         --         --          0
+Waiting Room Queue 2.Queue.WaitingTime          --         --         --         --          0
+Waiting Room Critical Queue.WaitingTime         --         --         --         --          0
+Seize Standard.Queue.WaitingTime            .59039     (Corr)     .00000     2.2210       3359    
+Queue 1.WaitingTime                             --         --         --         --          0
+Queue 3.WaitingTime                             --         --         --         --          0
+Seize Room Critical.Queue.WaitingTime       .01045     .01202     .00000     .44996        356    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+critical.WIP                                1.5419     .36087     .00000     16.000     1.0000    
+in patient.WIP                              7.1713     1.3081     .00000     52.000     .00000    
+emergency surgery.WIP                       1.2644     .20492     .00000     11.000     .00000    
+scheduled surgery.WIP                       1.1598     .25631     .00000     12.000     3.0000    
+emergency.WIP                               .00000     (Insuf)    .00000     .00000     .00000    
+outpatient.WIP                              5.3121     (Corr)     .00000     64.000     .00000    
+serious.WIP                                 4.3955     .65656     .00000     21.000     7.0000    
+moderate.WIP                                3.6148     .50229     .00000     20.000     13.000    
+Lab Tech.NumberBusy                         .00000     (Insuf)    .00000     .00000     .00000    
+Lab Tech.NumberScheduled                    1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Lab Tech.Utilization                        .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberBusy                       .00000     (Insuf)    .00000     .00000     .00000    
+Resource 1.NumberScheduled                  1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Resource 1.Utilization                      .00000     (Insuf)    .00000     .00000     .00000    
+Registration.NumberBusy                     .00000     (Insuf)    .00000     .00000     .00000    
+Registration.NumberScheduled                1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Registration.Utilization                    .00000     (Insuf)    .00000     .00000     .00000    
+Nurse.NumberBusy                            .00000     (Insuf)    .00000     .00000     .00000    
+Nurse.NumberScheduled                       2.0000     (Insuf)    2.0000     2.0000     2.0000    
+Nurse.Utilization                           .00000     (Insuf)    .00000     .00000     .00000    
+Doctor.NumberBusy                           .00000     (Insuf)    .00000     .00000     .00000    
+Doctor.NumberScheduled                      1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Doctor.Utilization                          .00000     (Insuf)    .00000     .00000     .00000    
+Imaging Tech.NumberBusy                     .00000     (Insuf)    .00000     .00000     .00000    
+Imaging Tech.NumberScheduled                1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Imaging Tech.Utilization                    .00000     (Insuf)    .00000     .00000     .00000    
+standard room.NumberBusy                    3.1634     .26237     .00000     6.0000     6.0000    
+standard room.NumberScheduled               6.0000     (Insuf)    6.0000     6.0000     6.0000    
+standard room.Utilization                   .52724     .04373     .00000     1.0000     1.0000    
+trauma room.NumberBusy                      .61551     .08317     .00000     2.0000     .00000    
+trauma room.NumberScheduled                 2.0000     (Insuf)    2.0000     2.0000     2.0000    
+trauma room.Utilization                     .30776     .04158     .00000     1.0000     .00000    
+Waiting Room NonCrit Queue.NumberInQueue    .00000     (Insuf)    .00000     .00000     .00000    
+Waiting Room Queue 2.Queue.NumberInQueue    .00000     (Insuf)    .00000     .00000     .00000    
+Waiting Room Critical Queue.NumberInQueue   .00000     (Insuf)    .00000     .00000     .00000    
+Seize Standard.Queue.NumberInQueue          2.7027     (Corr)     .00000     30.000     1.0000    
+Queue 1.NumberInQueue                       .00000     (Insuf)    .00000     .00000     .00000    
+Queue 3.NumberInQueue                       .00000     (Insuf)    .00000     .00000     .00000    
+Seize Room Critical.Queue.NumberInQueue     .00507     (Insuf)    .00000     3.0000     .00000    
+
+                                             COUNTERS
+
+Identifier                                    Count   Limit
+_____________________________________________________________
+
+Record Watining Room Full                        21  Infinite
+Total Entities Check In                        3740  Infinite
+Record Number of Customers Reneging             475  Infinite
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+critical.NumberIn                           712.00    
+critical.NumberOut                          711.00    
+in patient.NumberIn                         1515.0    
+in patient.NumberOut                        1515.0    
+emergency surgery.NumberIn                  520.00    
+emergency surgery.NumberOut                 520.00    
+scheduled surgery.NumberIn                  260.00    
+scheduled surgery.NumberOut                 257.00    
+emergency.NumberIn                          .00000    
+emergency.NumberOut                         .00000    
+outpatient.NumberIn                         1986.0    
+outpatient.NumberOut                        1986.0    
+serious.NumberIn                            1316.0    
+serious.NumberOut                           1309.0    
+moderate.NumberIn                           1147.0    
+moderate.NumberOut                          1134.0    
+Lab Tech.NumberSeized                       .00000    
+Lab Tech.ScheduledUtilization               .00000    
+Resource 1.NumberSeized                     .00000    
+Resource 1.ScheduledUtilization             .00000    
+Registration.NumberSeized                   .00000    
+Registration.ScheduledUtilization           .00000    
+Nurse.NumberSeized                          .00000    
+Nurse.ScheduledUtilization                  .00000    
+Doctor.NumberSeized                         .00000    
+Doctor.ScheduledUtilization                 .00000    
+Imaging Tech.NumberSeized                   .00000    
+Imaging Tech.ScheduledUtilization           .00000    
+standard room.NumberSeized                  2969.0    
+standard room.ScheduledUtilization          .52724    
+trauma room.NumberSeized                    271.00    
+trauma room.ScheduledUtilization            .30776    
+System.NumberOut                            7432.0    
+
+
+Simulation run time: 0.23 minutes.
+Simulation run complete.

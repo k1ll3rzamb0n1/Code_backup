@@ -1,0 +1,32 @@
+[RESOURCES]
+Lab Tech
+Resource 1
+Registration
+Nurse
+Doctor
+Imaging Tech
+standard room
+trauma room
+[VARIABLES]
+Create ModED.NumberOut
+idTOSearchFor
+Separate to Create Clone Entity Crit.NumberOut Orig
+Separate to Create Clone Entity.NumberOut Dup
+Waiting Room Queue.NumberOut
+Dispose Leave Waiting Room Without Being Seen.NumberOut
+Waiting Room Queue.NumberIn
+Register.NumberIn
+Create in patient arrival.NumberOut
+Create serious ed arrvial.NumberOut
+Create Emergency Surgery.NumberOut
+Separate to Create Clone Entity Crit.NumberOut Dup
+Decide Waiting Room Over Crowded.NumberOut True
+Separate to Create Clone Entity.NumberOut Orig
+Dispose 6.NumberOut
+Dispose Clones.NumberOut
+Dispose 3.NumberOut
+Create out patient arrival.NumberOut
+Register.NumberOut
+Create CritED.NumberOut
+Decide Waiting Room Over Crowded.NumberOut False
+Create scheduled surgery arrival.NumberOut

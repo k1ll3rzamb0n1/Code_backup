@@ -1,0 +1,30 @@
+Queries needed:
+
+User Queries-
+	Search books table
+	view cart
+	view orders and by userid
+Admin Queries-
+	view members
+	View orders per member where Item has not been shipped
+Program Queries-
+	get user full address
+	get credit card address
+
+
+Inserts Needed:
+
+	insert new member
+	insert new book
+	insert credit card
+	insert new order - order details
+	insert into cart
+
+Deletes needed
+	remove item from cart
+	remove remove credit card from file
+
+updates needed
+	update member details
+	update creadit card details
+	update order

@@ -1,0 +1,476 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\title{Exercise Set 2}
+\author{Ryan C. Bleile}
+
+\begin{document}
+\maketitle
+
+\section{•}
+
+$T : f \rightarrow f + 2 \frac{df}{dx} + \frac{d^{2}f}{dx^{2}} $
+
+\subsection*{a}
+
+In order to find a matrix representation of T we will begin by writing f as a vector. And we will solve the operator T for the function form of f, giving us a solution and a solution vector for T operating on f. Since f is in $P_{2}$ we can write it as: 
+
+\[
+f = a_{0} + a_{1}x + a_{2}x^{2} \equiv 
+\begin{bmatrix}
+a_{0}\\ 
+a_{1}\\ 
+a_{2}
+\end{bmatrix}
+\]
+
+Also, proforming the operation T on f gives us:
+
+\begin{eqnarray*}
+T(f) &=& a_{0} + a_{1}x + a_{2}x^{2} + 2a_{1} + 4a_{2}x + 2a_{2}\\
+&=&(a_{0} + 2a_{1} + 2a_{2}) + (a_{1} + 4a_{2})x + (a_{2})x^{2}
+\end{eqnarray*}
+
+Taking this solution we can write our solution vector as:
+
+\[
+T{f} = 
+\begin{bmatrix}
+a_{0} + 2a_{1} + 2a_{2}\\ 
+a_{1} + 4a_{2}\\
+a_{2}
+\end{bmatrix}
+\]
+
+working backwards to find the matrix representation we can Write T as a Matrix A of the form:
+
+\[
+A = 
+\begin{bmatrix}
+1 & 2 & 2\\
+0 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+\subsection*{b}
+
+If we change the order that we write the vectors for the input function then our output vector will also be flipped. We can use these different vectors to write a similar matrix to A, and call it B. Solving for B we get.
+
+\[
+B = 
+\begin{bmatrix}
+1 & 0 & 0\\
+4 & 1 & 0\\
+2 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a_{2}\\
+a_{1}\\
+a_{0}
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{2}\\
+a_{1} + 4a_{2}\\
+a_{0} + 2a_{1} + 2a_{2}
+\end{bmatrix}
+\]
+
+\subsection*{c}
+Using A and B to compute $T(x + x^{2})$ we first start by identifying the inputs: $a_{0}$ = 0, $a_{1}$ = 1, $a_{2}$ = 1. Now using matrix vector multiplication we can compute $T(x + x^{2})$.
+
+\[
+A:
+\begin{bmatrix}
+1 & 2 & 2\\
+0 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+4\\
+5\\
+1
+\end{bmatrix}
+\]
+\[
+B:
+\begin{bmatrix}
+1 & 0 & 0\\
+4 & 1 & 0\\
+2 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1\\
+5\\
+4
+\end{bmatrix}
+\]
+
+\subsection*{d}
+
+$\rho$ is a matrix whose operation is to permute the elements of a vector such that:\\
+
+\[
+\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+c\\
+b\\
+a
+\end{bmatrix}
+\]
+
+We can find the matrix that does this permutation, and shall label is C:
+
+\[
+C = 
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\] 
+
+\subsection*{e}
+
+In order to see which combinations of A,C and B,C produce the same matrix we will do all four multiplications and compare the results.
+
+\[
+AC =
+\begin{bmatrix}
+1 & 2 & 2\\
+0 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 2 & 1\\
+4 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\] 
+\[
+CA =
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 & 2\\
+0 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 4\\
+1 & 2 & 2
+\end{bmatrix}
+\]
+\[
+BC =
+\begin{bmatrix}
+1 & 0 & 0\\
+4 & 1 & 0\\
+2 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 4\\
+1 & 2 & 2
+\end{bmatrix}
+\]
+\[
+CB =
+\begin{bmatrix}
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0\\
+4 & 1 & 0\\
+2 & 2 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 2 & 1\\
+4 & 1 & 0\\
+1 & 0 & 0
+\end{bmatrix}
+\]
+
+From these relations we see that the combinations CA equals the combination BC. We can relate this result to what would be the expected outcome. The matrix C when preforming the matrix multiplication CA will produce the effect of switching the top row of A and the bottom row of A. When we preform the opposite multiplication on B, BC, the produced outcome is to switch the left most column of B with the right most column of B. Since A and B are already opposite each other in terms of the inputs having been swapped the Matrix A and B are related to each other by being similar and if you preformed the operation f swapping the top and bottom rows and than the left and right columns than A would become B.
+
+\section{•}
+
+\subsection*{a}
+
+Starting with the operator D = $\frac{d}{dt}$ acting on the function space $f = a \cos (t) + b \sin (t)$. We can write a vector representing the inputs in the form
+\[
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+\]
+
+Now we will preform the operation D on the function f we get:
+
+\begin{eqnarray*}
+\frac{df}{dt}( a \cos (t) + b \sin (t)) &=& -a \sin (t) + b \cos (t)
+\end{eqnarray*}
+
+which when written as a vector of the same form produces:
+
+\[
+\begin{bmatrix}
+b\\
+-a
+\end{bmatrix}
+\]
+
+In order to take out input and output this result the matrix that represents D, called A would be:
+
+\[
+A =
+\begin{bmatrix}
+o & 1\\
+-1 & 0
+\end{bmatrix}
+\]
+
+\subsection*{b}
+
+If we consider the same operator D acting on a different function of the form: $c_{1}e^{it} + c_{2}e^{-it}$. We can write the equivalent vector as:
+
+\[
+\begin{bmatrix}
+c_{1}\\
+c_{2}
+\end{bmatrix}
+\]
+
+Preforming the operation D on the inputs we see that it will produce:
+
+\begin{eqnarray*}
+\frac{d}{df}(c_{1}e^{it} + c_{2}e^{-it}) &=& c_{1}ie^{it} - c_{2}ie^{-it}
+\end{eqnarray*}
+
+We can write this operator than as the Matrix B:
+
+\[
+\begin{bmatrix}
+i & 0\\
+0 & -i
+\end{bmatrix}
+\]
+
+\subsection*{c}
+
+In order to come up with a general formula for any place of $A^{n}$ we will compute the first four terms in order to develop a formula in terms of n. The first four terms are computed as such:
+\[
+A^{1} =
+\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+b\\
+-a
+\end{bmatrix}
+\]
+\[
+A^{2} =
+\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+b\\
+-a
+\end{bmatrix}
+=
+\begin{bmatrix}
+-a\\
+-b
+\end{bmatrix}
+\]
+\[
+A^{3} =
+\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+-a\\
+-b
+\end{bmatrix}
+=
+\begin{bmatrix}
+-b\\
+a
+\end{bmatrix}
+\]
+\[
+A^{4} = 
+\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+-b\\
+a
+\end{bmatrix}
+=
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+\]
+
+So looking at our output vectors to find a pattern we can rewrite each output in the form of a matrix $A^{n}$ on the input vector <a,b>.
+\[
+A^{1} =
+\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+b\\
+-a
+\end{bmatrix}
+\]
+
+\[
+A^{2} =
+\begin{bmatrix}
+-1 & 0\\
+0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+-a\\
+-b
+\end{bmatrix}
+\]
+
+\[
+A^{3} =
+\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+-b\\
+a
+\end{bmatrix}
+\]
+
+\[
+A^{4} = 
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+\]
+
+The pattern: 0, -1, 0, 1; is a hard one write in terms of n. If we take this series we can write it as $\cos (\frac{n}{2}\pi)$. We can show that $\cos (\frac{n}{2}\pi)$ will produce this series. And since we are thinking about the series as trig functions we can the other terms as as sine functions. We will denote the locations in the matrix like this:
+
+\[
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix}
+\] 
+
+With this representation we can see above that the 1st and 4th terms follow the cosine series above. And we see that the 2nd term follows a sine series $\sin (\frac{n}{2}\pi)$ and the 3rd term follows a $- \sin (\frac{n}{2}\pi)$ series. With these terms defined, $A^{n}$ can be written as:
+
+\[
+\begin{bmatrix}
+\cos (\frac{n \pi}{2}) & \sin (\frac{n \pi}{2})\\
+-\sin (\frac{n \pi}{2}) & \cos (\frac{n \pi}{2})
+\end{bmatrix}
+\]
+
+We can also find the generic matrix for $B^{n}$. This matrix is much easier to represent and find. $B^{n}$ is found to be:
+
+\[
+B^{n} =
+\begin{bmatrix}
+i^{n} & 0\\
+0 & (-i)^{n}
+\end{bmatrix}
+\]
+
+\section{•}
+\subsection*{a}
+In order to find the matrix for K we will first write the function as a vector of inputs. Than compute the outputs by hand from the operator. Than rebuild the matrix operator from the input and output vectors. To begin with we start with the function:
+\subsection*{b}
+Using our matrix to compute K(2 + 3t):
+
+\subsection*{c}
+\subsection*{d}
+
+\section{•}
+These matrices are not similar as we have defined in this section since there is no way of reordering the first matrix to form the first.
+
+\end{document}

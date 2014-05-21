@@ -1,0 +1,66 @@
+--Query definitions:
+
+-- Search Book Table on parameters:
+	SELECT distinct *
+	FROM books B, authors A
+	WHERE B.isbn = A.isbn AND A.aname like '' AND B.title like '' AND B.isbn like '' AND B.subject like '' AND B.price = '';
+
+-- View Cart
+	SELECT *
+	FROM cart
+	WHERE userid = ''; 
+	
+-- Veiw Order history
+	SELECT OD.isbn, OD.qty, OD.price, O.recieved, O.shipped
+	FROM orders O, odetails OD
+	WHERE O.userid = '' AND O.ono = OD.ono;
+	
+-- view members
+	SELECT *
+	FROM members;
+
+-- view particular member
+	SELECT *
+	FROM members;
+	WHERE userid = '';
+
+-- View orders per member where Item has not been shipped
+	SELECT O.userid, O.ono, O.received
+	FROM orders O, members M
+	WHERE O.shipped IS NULL AND O.userid = M.userid;
+
+-- get a members address
+	SELECT M.address, M.city, M.state, M.zip
+	FROM members M
+	WHERE userid = '';
+	
+-- get credit card address
+	SELECT C.address, C.city, C.state, C.zip
+	FROM creditcards C
+	WHERE userid = '' AND cardnumber = '';
+
+--Inserts Needed
+
+INSERT INTO members VALUES ('fname', 'lname', 'address', 'city', 'state', zip, 'phone', 'email', 'userid', 'password');
+INSERT INTO books VALUES ('isbn', 'author', 'title', price, 'subject');
+INSERT INTO creditcards VALUES('userid', 'cardnumber', 'creditcardtype', 'creditcardnumber');
+INSERT INTO orders VALUES ('userid', 'ono', 'recieved', 'shipped', 'shipAddress', 'shipCity', 'shipState', shipZip);
+INSERT INTO odetails VALUES ('ono', 'isbn', 'qty', 'price');
+INSERT INTO cart VALUES ('userid', 'isbn', 'qty');
+
+--Deletes Needed
+DELETE FROM cart WHERE userid = '' AND isbn = '';
+DELETE FROM creditcards WHERE userid = '' AND cardnumber = '';
+
+--Updates Needed
+UPDATE members;
+SET fname = '', lname = '', address = '', city = '', state = '', zip = '', phone = '', email = '', password = ''
+WHERE userid = '';
+
+UPDATE creditcards
+SET cardnumber = ''
+WHERE userid = '', cardnumber = '';
+
+UPDATE orders
+SET shipped = ''
+WHERE ono = '';

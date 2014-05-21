@@ -1,0 +1,262 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+
+\title{Exercise Set 4}
+\author{Ryan C. Bleile}
+
+\begin{document}
+\maketitle
+
+\section{•}
+Are the following cases vector spaces
+\subsection*{a}
+The set containing the zero-vector $S_{1}$ = \{0\}.\\
+Is a vector space\\
+\begin{enumerate}
+\item This set contains the zero vector therefore it passes this criteria
+\item This set can be added and scaled with any linear combination of vectors from this space to produce a vector in this space
+\end{enumerate}
+\[
+a
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
++ b
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+\]
+
+The zero vector contains all possible combinations of zero vectors added or scaled thus making it an infinite space. With these three criteria passes we see that the zero-vector is a vector space.
+
+\subsection*{b}
+The set of all quadratics without a constant term. $S_{2}$ = \{$ax+bx^{2}$ $|$ a,b $\in\ \mathbb{R}$\}\\
+Is a vector-space\\
+\begin{enumerate}
+\item $S_{2}$ contains the zero vector
+\item $S_{2}$ is an infinite space
+\item $S_{2}$ can be added and scaled like a vector
+\end{enumerate}
+$$
+ax + bx^{2} + cx + dx^{2} = (a+c)x + (b+d)x^{2}
+$$
+\[
+\rightarrow
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
++
+\begin{bmatrix}
+c\\
+d
+\end{bmatrix}
+= 
+\begin{bmatrix}
+a+c\\
+b+d
+\end{bmatrix}
+\]
+
+Thus, this set is a vector space
+
+\subsection*{c}
+
+The set of all rational numbers $S_{3}$ = \{$\frac{m}{n}$ $|$ m,n $\in$ $\mathbb{Z}$\}\\
+Is NOT a vector space\\
+if $S_{3}$ were a vector space than the following calculation would be valid.
+\[
+\frac{m}{n} \equiv
+\begin{bmatrix}
+m\\
+n
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+m_{1}\\
+n_{1}
+\end{bmatrix}
++
+\begin{bmatrix}
+m_{2}\\
+n_{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+m_{1} + m_{2}\\
+n_{1} + n_{2}
+\end{bmatrix}
+\]
+However we can see that this is not true since doing the algebra:
+$$
+\frac{m_{1}}{n_{1}} + \frac{m_{2}}{n_{2}} = \frac{m_{1} n_{2} + m_{2} n_{1}}{n_{1} n_{2}} 
+$$
+should mean that:
+$$
+\frac{m_{1} + m_{2}}{n_{1} + n_{2}} = \frac{m_{1} n_{2} + m_{2} n_{1}}{n_{1} n_{2}}
+$$
+Which when we simplify:
+$$
+\frac{m_{1}}{m_{2}} = \frac{-n_{1}}{n_{2}}
+$$
+this shows that this does not hold true for any arbitrary numbers $n_{1}$, $n_{2}$, $m_{1}$, $m_{2}$ but in fact imposes a restrictions meaning that vector addition is not a property of this set. Therefore, this is not a vector space
+
+\subsection*{d}
+
+The set of all differentiable functions on the interval [0,1] where f(0)=f(1)=0.\\
+\begin{enumerate}
+\item the size of this set is infinite
+\item the set contains multiple zeros outputs by definition - and importantly the f(0) = 0 condition - thus it contains the zero vector
+\item the items checked in this set are additive and scalable like vectors
+\end{enumerate}
+Checking additive property:\\
+This set is an infinite set so representing subsets we can see that adding and scaling subsets produces something still in the original set. Representing the polynomial factors :
+\[
+x^{0} + x^{1} + x^{2} + x^{3} + ... + x^{n} + x^{n+1} = C
+\begin{bmatrix}
+0\\
+-1\\
+1\\
+-1\\
+...\\
+1\\
+-1
+\end{bmatrix}
+n \rightarrow \infty
+\]
+
+because of the boundary condition f(0) = 0 we know that the $x^{0}$ term is always zero to be a part of this set. With this we can show the set of polynomials as a vector, which is described by having an equal number of negative to positive terms in order to be a member of the set. Two vectors in this subset can be added and scaled like vectors:
+\[
+a
+\begin{bmatrix}
+0\\
+1\\
+-1
+\end{bmatrix}
++
+b
+\begin{bmatrix}
+0\\
+-1\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+a - b\\
+b - a
+\end{bmatrix}
+\]
+
+this will satisfy the boundary conditions and thus is part of the set.\\
+
+Other functions satisfy this as well and to show that adding and scaling is not unique to only polynomial sets we have $\sin (x\frac{\pi}{2})$ - x.
+This is in the set since when x = 0, f(x) = 0 and when x = 1, f(x) = 0\\
+
+This also scales with itself or other sets of polynomials.\\
+
+
+$$ a(\sin(x\frac{\pi}{2}) - x) + b(x^{2} - x) $$
+$$ a\sin(x\frac{\pi}{2}) - ax + bx^{2} - bx $$
+
+which still is still a part of our set satisfying the boundary conditions imposed.\\
+
+At this point I know that a more rigorous proof is needed. However, i am unsure how to continue in order to provide this proof so i shall leave the end of this question as a question on how to proceed.
+
+\subsection*{e}
+
+The set of all differentiable functions on the interval [0,1] where f(0)=1 , f(1)=0.\\
+
+Is NOT a vector space since a vector in the space cannot be scaled.
+\[
+f(x) = 1-x
+\equiv
+\begin{bmatrix}
+1\\
+-1
+\end{bmatrix} 
+\]
+This vector cannot be scaled since:
+\[
+2
+\begin{bmatrix}
+1\\
+-1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+2\\
+-2
+\end{bmatrix}
+\]
+produces the function, $f(x) = 2-2x$ which does not satisfy the boundary conditions and there for is not part of the vector space. Therefore this is not a vector space.
+
+\section{•}
+Four different subspaces of $\mathbb{R}^{2}$ are:
+\begin{enumerate}
+\item $S_{1}$ = \{0\} - This is the zero vector subspace which is the subspace of all vector-spaces
+\item $S_{2}$ = \{a + bx $|$ a,b $\in \mathbb{Z}$\} - This is a subspace because: it contains the zero-vector, it is an infinite space, and all vectors in $S_{2}$ can be added and scaled to produce another vector in $S{2}$. (Integers are a subspace of all real numbers which add and scale with integers to be other integers)
+\item $S_{3}$ = \{a $|$ a $\in \mathbb{R}$\}. a is a one dimensional subspace of $\mathbb{R}^{2}$, $\mathbb{R}^{1}$. A is a subspace because it is in-fact the entire 1-D vector space $\mathbb{R}^{1}$ which has all of the properties of a vector space
+\item $S_{4}$ = \{a $|$ a $\in \mathbb{Z}$\}. a is a one dimensional subspace that is a subspace of $\mathbb{R}^{1}$. This space is an infinite vector space called $\mathbb{Z}$ of integers that contains all the properties of a vector space, infinite, additive and scalar, contains zero vector
+\end{enumerate}
+
+\section{•}
+
+If T is a linear transformation on a vector space X than it will have at least one zero output, so that in minimum the output could be a vector space of the zero vector. Linear operators map vectors into vectors. The full domain of T does not have to equal the range of T, but since the input is a vector space the outputhas infinite possibilities as well. Since T maps vectors into vectors of another space it should go to show that these vectors are additive and scalable and are infact in the same space.\\
+T(ax + by) = aT(x) + bT(y) (definition of linearity)\\
+If T(x) produces a vector x'
+So if we take any output: say f \& g we can rebuild the operation such that:
+aT(x) + bT(y) = f + g\\
+And if this is true than outputs such as this should be true:\\
+f+g+h+j = aT($x_{1}$) + bT($x_{2}$) + cT($x_{3}$) + dT($x_{4}$) = T(a$x_{1}$+ b$x_{2}$+ cT$x_{3}$+ d$x_{4}$)\\ which is true by the definition of linearity.\\
+
+\section{•}
+If U is a subspace of $\mathbb{R}^{2}$ and V is a subspace of $\mathbb{R}^{2}$ than their intersection will at minimum be the Zero vector and at most be completely overlapping where U = V. In between these two extremes their will be overlapping in either the first or second dimensions, or both. Overlapping in the first dimension will produce a one dimensional vector space and overlapping in the second dimension will produce a two dimensional 
+ vector space which is limited but still follows the same rules of all vector spaces. Examples include subspace correlations from question 2 such as $S_{1}$ and $S_{2}$ which overlap at the zero vector space, $S_{2}$ and $S_{3}$ which overlap at the $\mathbb{Z}$ vector space. $S_{3}$ and $S_{4}$ which overlap at the $\mathbb{Z}$ vector space - which happens to be all of $S_{4}$.
+ 
+\section{•}
+If x can be any x $\in$ X than x can be the zero vector. If T(0) $\not =$ 0 than T() cannot be a linear function.\\ 
+Proof:\\
+\begin{eqnarray*}
+If\ T\ is\ linear:\\
+T(0) &=& T(0+0)\\
+AND\\
+T(0+0) &=& T(0) + T(0) ->\ from\ the\ definition\ of\ linearity\\
+SO:\\
+T(0) = 2T(0)\\
+0 = T(0)\\
+BUT!!
+\end{eqnarray*}
+From the definition T(0) $\not =$ 0. So T cannot be a linear operator
+
+\section{•}
+To invert a matrix T we can use the formula (for a 2x2 example):
+\[
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+^{-1}
+=
+\frac{1}{det(T)}
+\begin{bmatrix}
+d & -b\\
+-c & a
+\end{bmatrix}
+\]
+This matrix will be non-invertible if the determinant is zero. So if we can show that if there is a non-trivial kernel for T than the det(T) = 0, we will have a proof for the statement that a non-trial Null space produces an non-invertible matrix.\\
+
+If we think about it, if we were able to invert T and it had a non-trivial kernel than we would be able to reconstruct the input vector from the zero vector in such a way that it would give you all the arbitrary vectors that would produce the zero vector. However, this is illogical since the solution to the matrix vector multiplication will always give you the zero vector. Meaning you could not rebuild your inputs if T was invertible. Meaning that T is not invertible. 
+
+\end{document}

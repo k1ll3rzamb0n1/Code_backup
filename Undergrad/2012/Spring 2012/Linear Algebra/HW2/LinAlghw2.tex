@@ -1,0 +1,396 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\title{Exercise Set 2}
+\author{Ryan C. Bleile}
+
+\begin{document}
+\maketitle
+
+\section*{Operators}
+
+There are three operators that will will consider.
+
+\begin{enumerate}
+\item	$T_{1}$ : f $\rightarrow$ $x \frac{df}{dx}$ The domain of the operator is quadratic polynomials:\\
+		$f = a_{0} + a_{1}x + a_{2}x^{2}$
+\item	$T_{2}$ takes points in the plane. The action is rotation by angle $\theta$ about the origin.
+\item	$T_{3}$ takes as its input the position, velocity, and acceleration of a free falling object; the output is the position, velocity, and acceleration 1 second later. (Note that the equation of motion of the object can be stated as $\frac{d^{3}x}{dt^{3}} = 0$ where x(t) is the position.) 
+\end{enumerate}
+
+\section{Problem 1}
+
+Represent each operator with a matrix.\\
+
+\subsection{$T_{1}$}
+
+In order to write $T_{1}$ in matrix form, first we will define our function as a vector, secondly preform the operation once on the function, and thirdly we will write the solution as a vector using the same definition from the function space.\\
+\\
+Starting with the function space:
+\[
+f = a_{0} + a_{1}x + a_{2}x^{2} \equiv
+\begin{bmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}
+\end{bmatrix}
+\]
+
+Now we must preform the operation $T_{1}$ on f\\
+
+\begin{eqnarray*}
+T[f] &=& x( \frac{d}{dx}(a_{0}) + \frac{d}{dx}(a_{1}x) + \frac{d}{dx}(a_{2}x^{2}) )\\
+&=&		0 + a_{1}x + 2a_{2}x^{2}
+\end{eqnarray*}
+\[
+T[f] = 
+\begin{bmatrix}
+0\\
+a_{1}\\
+2a_{2}
+\end{bmatrix}
+\]
+
+Now working backward we can form the matrix that would perform this operation.
+
+\[
+\begin{bmatrix}
+ & & \\
+ &T& \\
+ & & 
+\end{bmatrix}
+\begin{bmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+a_{1}\\
+2a_{2}
+\end{bmatrix}
+\]
+
+filling in the values required to turn the initial vector into the final vector we find that the operator $T_{1}$ is
+
+\[
+T_{1} = 
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{bmatrix}
+\]
+
+\subsection{$T_{2}$}
+
+In order to derive a rotation matrix for the coordinates (x,y) we will start first with a rotation of zero degrees. In order to get this result from an x, y vector we can write:
+
+\[
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+x
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
++
+y
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\]
+
+This is the case when the rotation ($\theta$) = 0. In order to write a formula that emulates this we may write the zero's as $\sin \theta$ and the one's as $\cos \theta$. However in order to achieve the proper rotation, the $\sin$ term that is on the y component must be multiplied by -1. This was derived through trial and error process. This means that in order to transform the vector:
+\[
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+\]
+
+into a rotated vector of the form:
+
+\[
+\begin{bmatrix}
+x'\\
+y'
+\end{bmatrix}
+\]
+
+we would need a matrix of the form:
+
+\[
+\begin{bmatrix}
+\cos \theta & - \sin \theta\\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\]
+
+\subsection{$T_{3}$}
+Operator $T_{3}$ is an action upon the vector:\\
+\[
+\begin{bmatrix}
+x_{0}\\
+v_{0}\\
+a_{0}
+\end{bmatrix}
+\]
+
+Moving from the definition 
+$$ \frac{d^{3}x}{dt^{3}} = 0 $$
+we will integrate in order to find expressions for a, v, and x. From our basic physics knowledge it is known that
+\begin{eqnarray*}
+\frac{d^{2}x}{dt^{2}} = a\\
+\frac{dx}{dt} = v
+\end{eqnarray*}
+
+Also, with the knowledge that a is constant we are able to derive a value for v and then a value for x. To find v will will integrate a.
+\begin{eqnarray*}
+v &=& \int a dt\\
+&=& at + c \\
+v(0) &=& v_{0}\\
+v(t) &=& at + v_{0}
+\end{eqnarray*}
+
+Now we can integrate our solution for v in order to find x:
+\begin{eqnarray*}
+x &=& \int v(t) dt\\
+&=& \int at + v_{0}\\
+&=& \frac{1}{2}at^{2} + v_{0}t + c\\
+x(0) &=& x_{0}\\
+x(t) &=& \frac{1}{2}at^{2} + v_{0}t + x_{0} 
+\end{eqnarray*}
+
+now we have an equation representing a, v and x. 
+
+If we apply the transformation now to a,v,x than we will be able find a matrix representing $T_{3}$. Transformation $T_{3}$ applied to the vector 
+\[
+\begin{bmatrix}
+x_{0}\\
+v_{0}\\
+a_{0}
+\end{bmatrix}
+\]
+
+applying the operation one step at a time:\\
+$a_{0}$ is transformed into $a_{0}$\\
+$v_{0}$ is transformed into $a_{0} + v_{0}$\\
+$x_{0}$ is transformed into $\frac{1}{2}a_{0} + v_{0} + x_{0}$\\
+giving us a vector:\\
+\[
+\begin{bmatrix}
+x_{0} + v_{0} + \frac{1}{2}a_{0}\\
+v_{0} + a_{0}\\
+a_{0}
+\end{bmatrix}
+\]
+
+Using the same process to work backwards and find the matrix we see that:\\
+
+\[
+\begin{bmatrix}
+& &\\
+&T&\\
+&&
+\end{bmatrix}
+*
+\begin{bmatrix}
+x_{0}\\
+v_{0}\\
+a_{0}
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_{0} + v_{0} + \frac{1}{2}a_{0}\\
+v_{0} + a_{0}\\
+a_{0}
+\end{bmatrix}
+\]
+and this gives us
+\[
+\begin{bmatrix}
+1 & 1 & \frac{1}{2}\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}
+*
+\begin{bmatrix}
+x_{0}\\
+v_{0}\\
+a_{0}
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_{0} + v_{0} + \frac{1}{2}a_{0}\\
+v_{0} + a_{0}\\
+a_{0}
+\end{bmatrix}
+\]
+
+
+\section{Problem 2}
+
+Using Matrix representation find compute $T_{1}^{2}(x^{2})$\\
+\\
+Now if we write out the operator in matrix form and multiply it by itself then we can find an operator for $T_{1}^{2}$\\
+
+\[
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{bmatrix}
+*
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 4
+\end{bmatrix}
+\]
+
+Applying the $T_{1}^{2}$ on $x^{2}$, first we must write $x^{2}$ as a vector. Using the same form as we defined for this domain.\\
+
+\[
+x^{2} \equiv 
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+\]
+
+and now applying the $T^{2}_{1}$ operator:
+
+\[
+\begin{bmatrix}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 4
+\end{bmatrix}
+*
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+4
+\end{bmatrix}
+\]
+
+\section{Problem 3}
+
+An inverse of the rotation matrix can be found through a trial and error process or geometric reasoning. In order for the coordinate (x,y)to be rotated clockwise instead of counter clock wise than the sine term on the y coordinate must be positive and the sine term on the x coordinate must be negative. This produces this matrix:
+\[
+T_{2}^{-1} =
+\begin{bmatrix}
+\cos \theta & \sin \theta\\
+- \sin \theta & \cos \theta
+\end{bmatrix}
+\]
+
+When the operator $T_{3}$ is multiplied with $T_{3}^{-1}$ than it should produce a net effect of no rotation. As should the other multiplication $T_{3}^{-1}$ times $T_{3}$. We can show this by doing the matrix multiplication as seeing the resultant matrix:\\
+\\
+$T_{3}^{-1}$*$T_{3}$
+\[
+\begin{bmatrix}
+\cos \theta & \sin \theta\\
+- \sin \theta & \cos \theta
+\end{bmatrix}
+*
+\begin{bmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\]
+$T_{3}$*$T_{3}^{-1}$
+\[
+\begin{bmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{bmatrix}
+*
+\begin{bmatrix}
+\cos \theta & \sin \theta\\
+- \sin \theta & \cos \theta
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+\]
+
+
+
+\section{Problem 4}
+
+Computing $T^{n}_{3}$\\
+\[
+T_{3} =
+\begin{bmatrix}
+1 & 1 & .5\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+\[
+T^{2}_{3} =
+\begin{bmatrix}
+1 & 2 & 2\\
+0 & 1 & 2\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+\[
+T^{3}_{3} =
+\begin{bmatrix}
+1 & 3 & 4.5\\
+0 & 1 & 3\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+\[
+T^{4}_{3} = 
+\begin{bmatrix}
+1 & 4 & 8\\
+0 & 1 & 4\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+From this we see that the general formula for $T^{n}_{3}$ is:
+\[
+T^{n}_{3} = 
+\begin{bmatrix}
+1 & n & \frac{n^{2}}{2}\\
+0 & 1 & n\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+The physical meaning of the $T^{2}_{3}$ operator is that instead of giving the acceleration, velocity, and displacement one second ahead of the given vector it will give it two seconds a head (t+2 instead of t+1).
+
+\end{document}

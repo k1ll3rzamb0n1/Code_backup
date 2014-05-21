@@ -1,0 +1,134 @@
+<!doctype html>
+	<head>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script src="myjs.js"></script>
+	<link rel="stylesheet" type="text/css" href="mycss.css" />
+	<title>Ryan's Online Book Store</title>
+	</head>	
+	<body>
+	<div class = "header"> 
+		<div name = "title">
+			<h1 id="pageTitle">Ryan's Online Book Store</h1>
+		</div>
+		<table border="0" align="center">
+		<tr>
+			<td><span class="usernameSpan">Welcome, <span id="useridSpan"></span></span></td><td><input id="searchButton" type="button" value="Search" onclick="showSearch()" style="display: none"/></td><td><input id="cartButton" type="button" value="Cart" onclick="cart()" style="display: none"/></td><td><input id="orderButton" type="button" value="Orders" onclick="openOrdersTable()" style="display: none"/></td><td><input id="editUserButton" type="button" value="Edit User Information" onclick="editUserScreen()" style="display: none"/></td>
+		</tr>
+		</table>
+	</div>
+	
+	<div id="start" style="display: none">
+	<div><h2>Please Login to continue</h2></div>
+		<input type="button" value="Login" onclick="showLogin()" />
+		<input type="button" value="New User" onclick="createNewUser()" />
+	</div>
+	
+	<div id="NewUserCreation" style="display: none">
+		<table align="center">
+		<tr><td>First Name</td><td><input id="newFname" type="text" /></td></tr>
+		<tr><td>Last Name</td><td><input id="newLname" type ="text" /></td></tr>
+		<tr><td>Street Address</td><td><input id="newAddress" type="text" /></td></tr>
+		<tr><td>City</td><td><input id="newCity" type="text" /></td></tr>
+		<tr><td>State</td><td><input id="newState" type="text" /></td></tr>
+		<tr><td>Zip</td><td><input id="newZip" type="text" /></td></tr>
+		<tr><td>User ID</td><td><input id="newUserName" type="text" onblur="checkUniqueUser()"/></td><td><span id="validUser" style="display: none">OK</span><span id="invalidUser" style="display: none">Taken</span></td></tr>
+		<tr><td>Password</td><td><input id ="newPass" type="password" /></td></tr>
+		<tr><td></td><td><input type="submit" onclick="sendNewUserRequest()" /></td></tr>
+		</table>
+	</div>
+	
+	<div id="loginScreen" class="LoginScreen" style="display: none">
+		<div><h2>User Login</h2></div>
+		<div id="loginFailed" style="display: none">Login attempt failed</div>
+		<table align="center">
+			<tr><td>User Name:</td><td> <input id="userName" type="text" placeholder="User Name" onkeydown="if (event.keyCode == 13) login()" /><td></tr>
+			<tr><td>Password:</td><td> <input id="password" type="password" placeholder=" Password" onkeydown="if (event.keyCode == 13) login()" /><td></tr>
+		</table>
+	</div>
+
+	<div id="selectSearch" style="display: none" class="loggedIn">
+		<div><h2>Hello <span class="usernameSpan"></span>, What would you like to do?</h2></div>
+		<input type="button" value="Search for a Book" onclick="searchDBScreen()" />
+		<input type="button" value="Edit User Information" onclick="editUserScreen()" />
+	</div>
+	
+	<div id="Search" style="display: none" align="center">
+		<div><h2>Search For a Book</h2></div>
+		<div id="invalidSearch" style="display: none">Invalid Search</div>
+		<table>
+		<tr><td>Title: </td><td><input id="searchTitle" type="textbox" class="searchBox" onkeyup="search()"/></td>
+			<td>Author: </td><td><input id="searchAuthor" type="textbox" class="searchBox" onkeyup="search()"/></td></tr>
+		<tr><td>ISBN number: </td><td><input id="searchISBN" type="textbox" class="searchBox" onkeyup="search()"/></td>
+			<td>Subject: </td><td><input id="searchSubject"	type="textbox" class="searchBox" onkeyup="search()"/></td></tr>
+		<tr><td>Price: </td><td><input id="searchPrice" type="textbox" class="searchBox" onkeyup="search()"/></td></tr>
+	</div>	
+	
+	<div id="bookTable" style="display: none">
+	<div><h2>Search Results</h2></div>
+		<table border="1" id="myTable">
+		<thead>
+		<tr>
+			<th>ISBN</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Subject</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Add to Cart</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+		</table>
+	</div>
+	
+	<div id="cart"style="display: none" >
+		<div class="center80">
+		<div><h2>Cart</h2></div>
+		<table border="1" id="myCartTable" align="center">
+			<tr>
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Subject</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Order Now</th>
+				<th>Item Total</th>
+				<th>Edit Order</th>
+				<th>Delete Item</th>
+			</tr>
+		</table>
+		<div class="fr"><input type="button" value="orderNow" onclick="placeOrder()"/> </div>
+	</div>
+	</div>
+	
+	<div id="UserInfo" style="display: none">
+	<div><h2>User Information</h2></div>
+		<table align="center" border="0">
+			<tr> <td>User ID</td><td><span id="UIuserid"></span><input class="changes" type="text" id="UIuseridEdit" style="display: none"/></td></tr>
+			<tr> <td> First Name</td><td><span id="UIfname"></span><input class="changes" type="text" id="UIfnameEdit" style="display: none"/></td><td><input type="button" value="Accept Changes" class="exceptChanges" onclick="excpetUserInfoItem(this)" style="display: none" /><input type="button" id="UIfnameEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr><td>Last Name</td><td><span id="UIlname"></span><input class="changes" type="text" id="UIlnameEdit" style="display: none"/></td><td><input type="button" value="Accept Changes" class="exceptChanges" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIlnameEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr> <td>Adress</td><td><span id="UIaddress"></span><input class="changes" type="text" id="UIaddressEdit" style="display: none"/></td><td><input type="button" value="Accept Changes" class="exceptChanges" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIaddressEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr> <td>City</td><td><span id="UIcity"></span><input class="changes" type="text" id="UIcityEdit" style="display: none"/></td><td><input type="button" class="exceptChanges" value="Accept Changes"  onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIcityEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr> <td>State</td><td><span id="UIstate"></span><input class="changes" type="text" id="UIstateEdit" style="display: none"/></td><td><input type="button" class="exceptChanges" value="Accept Changes" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIstateEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr><td>Zip</td><td><span id="UIzip"></span><input class="changes" type="number" maxlength="5" id="UIzipEdit" style="display: none"/></td><td><input type="button" class="exceptChanges" value="Accept Changes" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIzipEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr><td>Phone</td><td><span id="UIphone"></span><input class="changes" type="text" id="UIphoneEdit" style="display: none"/></td><td><input type="button" class="exceptChanges" value="Accept Changes" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIphoneEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr><td>Email</td><td><span id="UIemail"></span><input class="changes" type="text" id="UIemailEdit" style="display: none"/></td><td><input type="button" class="exceptChanges" value="Accept Changes" onclick="excpetUserInfoItem(this)" style="display: none"/><input type="button" id="UIemailEditB" value="Edit Row" class="editRow" onclick="editUserInfoItem(this)"/></td></tr>
+			<tr><td></td><td></td><td><input type="submit" value="Submit Changes" onclick="updateUserInformation()"/></td></tr>
+		</table>
+	</div>
+	
+	<div id="orderHistory" style="display: none">
+		<div><h2>Order History</h2><br /> <input type="button" value="Get Orders" onclick="orderTable()"/></div>
+		<table align="center" border="1">
+			<thead>
+				<th>Order Number</th><th>ISBN</th><th>Quantity</th><th>Price</th><th>Order Received</th><th>Order Shipped</th>
+			</thead>
+			<tbody id="orderTableBody">
+			</tbody>
+		</table>
+	</div>
+	
+	</body>
+</html>

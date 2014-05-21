@@ -1,0 +1,14 @@
+INSERT INTO members VALUES (fname, lname, adress, city ,state, zip, phone, email, userid, password);
+
+Need to check constraint that cctype is in defined group - supported credit cards
+INSERT INTO members_creditcard VALUES(userid, creditcardtype, creditcardnumber);
+
+INSERT INTO books VALUES(isbn, title, price, subject);
+
+INSERT INTO authors VALUES (aname, isbn);
+
+INSERT INTO orders VALUES(userid, ono, recieved, shipped, shipAddress, shipCity, shipState, shipZip);
+
+INSERT INTO odetails VALUES(ono, isbn, qty, price);
+
+INSERT INTO cart VALUES(userid, isbn, qty);

@@ -1,0 +1,34 @@
+INSTALL PERL JSON AND JSON::SX modules in order to reproduce functionality
+
+cd to xampp/perl/bin
+
+type:
+	PPM install JSON
+	yes to if you really want to install it
+	PPM install JSON::XS
+	yes again
+
+done with extra work
+
+I tested page under google chrome and firefox. Not sure of protability to IE -> IE is lame
+
+
+
+Also under database creation need add two new users. 
+
+One with read only access and one with read/write priviledges to the database
+
+add user: bsadmin  -> all priviledges on bookstore db
+password: toor     
+
+add user: bsuser   -> select priveledges on bookstore db
+password; password
+
+
+
+
+modify the buildDB.sql and popDB.sql scripts to point to the location of the rest of the sql files and you will be able to build and populate the database with all test information
+
+
+
+

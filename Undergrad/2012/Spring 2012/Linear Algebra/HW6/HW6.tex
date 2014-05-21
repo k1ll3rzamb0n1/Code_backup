@@ -1,0 +1,442 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+
+\title{Exercise Set 6}
+\author{Ryan C. Bleile}
+
+\begin{document}
+\maketitle
+
+\section{•}
+Show S = span ($v_1 , v_2 , ... , v_n$) is a n dimensional subspace of X.\\
+If X is an M-dimensional subspace then $v_1 \ \in$ X, $v_2 \ \in$ X, and $v_n \ \in$ X. So all vectors $v_1 \rightarrow v_n$ are in X. The vector space X can be identified as a linear combination of its basis vectors. One common basis to choose which we can identify all vector is X with is its standard basis. Therefore:
+
+\[
+X \equiv
+x_1
+\begin{bmatrix}
+1\\
+0\\
+...\\
+0
+\end{bmatrix}
++ x_2
+\begin{bmatrix}
+0\\
+1\\
+...\\
+0
+\end{bmatrix}
++ ...
++ x_m
+\begin{bmatrix}
+0\\
+...\\
+0\\
+1
+\end{bmatrix}
+\]
+
+All vectors that lie in the vector space X can be rewritten as a particular linear combination of the basis of X. So vector $v_1$ can be rewritten as: 
+
+
+\[
+v_1 \equiv
+C_1
+\begin{bmatrix}
+1\\
+0\\
+...\\
+0
+\end{bmatrix}
++ C_2
+\begin{bmatrix}
+0\\
+1\\
+...\\
+0
+\end{bmatrix}
++ ...
++ C_m
+\begin{bmatrix}
+0\\
+...\\
+0\\
+1
+\end{bmatrix}
+\]
+
+Also, two vectors added or scaled in any way could be rewritten in this form as another vector of the vector space, X. Such that:
+
+
+\[
+v_1 + v_2 \equiv
+(C_{1_1} + C_{1_2} )
+\begin{bmatrix}
+1\\
+0\\
+...\\
+0
+\end{bmatrix}
++ (C_{2_1} + C_{2_2} )
+\begin{bmatrix}
+0\\
+1\\
+...\\
+0
+\end{bmatrix}
++ ...
++ (C_{m_1} + C_{m_2} )
+\begin{bmatrix}
+0\\
+...\\
+0\\
+1
+\end{bmatrix}
+\]
+And since $(C_{1_1} + C_{1_2} ) \in \mathbb{R}$ we can rewrite this as another constant say $C_1$. There for any linear combination of vectors in the vector space can be added and scaled to be rewritten as a vector lying in the space using its standard basis. Thus any linear combination of vectors in X produces vectors in X, and since our definition of a vector space is a linear combination of vectors in the space will produce another vector in the space we can see that for any subspace of X such that S = span($v_1, v_2, ..., v_n$) will be a subspace of X. Since a span in the linear combination of vectors and the basis of all the vectors in S can be written using the same standard basis as X.\\
+
+If the dimension of X is exactly equal to the number of vectors in S than we know that S is one possible basis for X as long as no vectors in S are scalar multiples of each other. Also, If the dimension of X is greater than S than we know that vectors in S are not linearly independent and therefore cannot be a basis of X. If the number of vectors in S are less than the dimensions of X than we know S is a subspace of X and is not a basis for X.
+
+\section{•}
+
+We may write a vector in X using the basis $v_1,\ v_2 ,\ v_3,\ ...,\ v_n$ and we call that vector v. If we wish too write v as:
+$$ v = a_1 v_1 + a_2 v_2 + ... + a_n v_n  $$
+But we also wish to write v as:
+$$ v = b_1 v_1 + b_2 v_2 + ... + b_n v_n $$
+
+than we are actually writing the same vector. Since $a_i \in \mathbb{R}$ and $b_i \in \mathbb{R}$ and the basis vectors used for both are the same we are essentially writing the same vector twice and all of $a_i$ will equal $b_i$ for every $i$.\\
+
+This can be shown by first looking at the vector v. We know that v must equal v and v-v = 0. Using this knowledge we can write out the vector v in both of its forms.
+\begin{eqnarray*}
+v &=& v\\
+a_1 v_1 + a_2 v_2 + ... + a_n v_n &=& b_1 v_1 + b_2 v_2 + ... + b_n v_n\\
+(a_1 - b_1) v_1 + (a_2 - b_2) v_2 + ... (a_n - b_n) v_n &=& 0;\\
+\therefore a_1 - b_1\ AND\ a_2 - b_2\ AND\ all\ a_n - b_n  &=& 0
+\end{eqnarray*} 
+$$\therefore a_1 = b_1\ AND\ a_2 = b_2\ AND\ a_n = b_n $$
+And we have shown that $a_i = b_i$ for all i when these vectors are compared in the same basis.
+
+\section{•}
+ 
+If we take $P^2$ which is the space of all quadratic polynomials we can represent it in standard basis as:
+
+\[P^2 \equiv a_0 + a_1 x + a_2 x^2 \equiv
+a_0
+\begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix}
++ a_1
+\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix}
++ a_2
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+\]
+
+where the standard basis of $P^2$ is:
+
+\[ basis(P^2) = (1, x, x^2) 
+\equiv \begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0\\
+x\\
+0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0\\
+0\\
+x^2
+\end{bmatrix}
+\]
+We can choose to write out $P^2$ in terms of a different basis of our choice. One possible choice would be to pick a non-standard basis such as:
+
+$$basis = (1-x, x^2 + x, 1 + x + x^2) $$
+or even:
+$$ basis = (1- x - x^2, x -1 - x^2, 1 + x^2) $$
+
+These are but two out of an infinite possibility of ways to describe the space made by $P^2$. If we look to the standard basis where $P^2$ is identified with vectors of only numbers we can represent the space of $P^2$ with an infinite number of 3, 3x1 vectors which are linearly independent, since $P^2$ is isomorphic to the vector space $\mathbb{R}^3$.
+
+\section{•}
+
+Given a linear operator L:$\mathbb{R}^2 \rightarrow \mathbb{R}^2$ which can be represented in the standard basis as:
+\[
+mat(L) = 
+\begin{bmatrix}
+1 & 4\\
+2 & 3
+\end{bmatrix}
+\]
+
+If we wish, we are able to rewrite L in terms of a non-standard basis $v_1, v_2$ where:
+\[
+v_1 = 
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+\ AND\
+v_2 = 
+\begin{bmatrix}
+-2\\
+1
+\end{bmatrix}
+\]
+
+We start by writing taking the basis of L and finding a way to rewrite then in terms of the new basis $v_1, v_2$. If we start with the basis of L to be standard than they are:
+\[
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+\ AND\ 
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\]
+If we write $v_1$ and $v_2$ in terms of these basis we will have a way to convert between the two. So:
+
+\[
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+C_1
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
++
+C_2
+\begin{bmatrix}
+-2\\
+1
+\end{bmatrix}
+\]
+If we now expand the v basis out in terms of the standard basis we see that:
+\[
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+C_1
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
++C_1
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
++
+C_2
+\begin{bmatrix}
+-2\\
+0
+\end{bmatrix}
++
+C_2
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\]
+Now combining like terms we see:
+$$ 1 = C_1 - 2 C_2 $$
+AND
+$$ 0 = C_1 + C_2 $$
+
+We can now solve this system of equations to find that: $C_1$ = $\frac{1}{3}$ and $C_2$ = $\frac{-1}{3}$. Doing this same process again for the other basis vector we get to this system of equations:
+$$ 0 = C_3 - 2 C_2$$
+AND
+$$ 1 = C_3 + C_4 $$
+
+Which give us solutions for $C_3$ and $C_4$ to be: $C_3$ = $\frac{2}{3}$ and $C_4$ = $\frac{1}{3}$. From this we need only put together out coefficients in terms of a matrix to see that the linear operator L written in terms of the v bases described above is: 
+\[
+mat(L) = 
+\begin{bmatrix}
+\frac{1}{3} & \frac{-1}{3}\\
+\frac{2}{3} & \frac{1}{3}
+\end{bmatrix}
+\]
+
+Where now each component of the matrix is relative to the new basis $v_1$ and $v_2$
+
+\section{•}
+The trace of a 2x2 matrix is such that a matrix:
+\[
+mat() = 
+\begin{bmatrix}
+a & b\\
+c & d
+\end{bmatrix}
+\]
+
+is the Sum of the diagonals a and d: a+d. A traceless matrix is one than where a+d = 0. which could also be defined as a = -d. So a traceless matrix would be any matrix that looked like:
+\[
+mat() = 
+\begin{bmatrix}
+a & b\\
+c & -a
+\end{bmatrix}
+\]
+
+If X is the set of all traceless matrices than X is a vector space. We know X is a vector space because we can write it as the span of its basis. X's basis are:
+\[
+basis = 
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+\]
+
+such that the span of the basis will produce the vector space X:
+
+\[
+X = 
+span(
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+)
+\]
+
+meaning that:
+\[
+X = 
+a
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
++ b
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
++ c
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+\]
+
+Just to check this result with our definition of a vector space we can see that X will have a zero vector on the all zero input. Also, We can write a linear combination of Vectors in X as another vector in X such that:
+\[
+C_1
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
++ C_2
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
++ C_3
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
++
+C_4
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
++ C_5
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
++ C_6
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+=
+\]
+\[
+(C_1 + C_4)
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
++ (C_2 + C_5)
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
++ (C_3 + C_6)
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+\]
+Which since $C_n \in \mathbb{R}$ and combination of C's will be $\in \mathbb{R}$. So this linear combination of vectors in X is:
+
+\[
+a
+\begin{bmatrix}
+1& 0\\
+0 & -1
+\end{bmatrix}
++ b
+\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}
++ c
+\begin{bmatrix}
+0 & 0\\
+1 & 0
+\end{bmatrix}
+\]
+$$a, b, c \in \mathbb{R} $$
+
+Thus X is a 3 dimensional vector space
+
+
+\end{document}}

@@ -1,0 +1,49 @@
+Open webpage
+
+Select new user to generate your own accound - only required information is the userid
+
+select submit
+
+ok to alert
+
+enter login credentials you just created
+
+login
+
+select edit user Search for book button
+
+in any field you may narrow your search
+
+try to find Harry Potter -> fast and easy? i hope so
+
+you can try any search criteria to watch the table build itself on the fly
+
+now pick any book you wish and add a number to quantity than select add to cart (Also notice that if the quantity section is empty it will do nothing)
+
+select ok on alert
+
+select cart from top menu bar to navigate to cart screen (from this screen you can adit the quantity of your cart item, delete a cart item or place an order)
+
+if you wish to place your order -> select the order now checkbox and than click button order now
+
+if you have multiple items in the cart you will need to select the checkbox cooresponding with each item you wish to order. Only selected items will be ordered
+
+if you wish to add more items to cart you can navigate back to search screen by clicking the search button on to top of page
+
+else select order now and then ok to alert;
+
+your item has removed itself from the cart and is now an order
+
+to view orders select orders button from the top menu
+
+to get a lest of ordered items click the get orders button
+
+you will see any items you have ordered and the ordering information about that item
+
+this completes the required functionality:
+
+other neat tid-bits:
+
+you can navigate to the Edit user information screen to change non critical informaiton about your profile
+
+you can navigate to any screen from any screen once you are logged in

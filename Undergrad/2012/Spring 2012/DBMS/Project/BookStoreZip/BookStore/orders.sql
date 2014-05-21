@@ -1,0 +1,10 @@
+INSERT INTO orders VALUES('rprod1', 1, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('rprod1', 2, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('kkk', 3, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('aseed', 4, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('rprod1', 5, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('rprod1', 6, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('kkk', 7, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('aseed', 8, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('rprod1', 9, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');
+INSERT INTO orders VALUES('rprod1', 10, '1999-02-03', NULL, '123 yay ln', 'Stockton', 'CA', '95211');

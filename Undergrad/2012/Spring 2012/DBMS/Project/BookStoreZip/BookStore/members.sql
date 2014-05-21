@@ -1,0 +1,11 @@
+INSERT INTO members VALUES ('Richard', 'Feynman', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rfeynman1@physics.sci', 'rfeyn1', 'password');
+INSERT INTO members VALUES ('Richard', 'Feynman', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rfeynman5@physics.sci', 'rfeyn5', 'password');
+INSERT INTO members VALUES ('Richard', 'Feynman', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rfeynman4@physics.sci', 'rfeyn4', 'password');
+INSERT INTO members VALUES ('Richard', 'Feynman', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rfeynman3@physics.sci', 'rfeyn3', 'password');
+INSERT INTO members VALUES ('Richard', 'Feynman', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rfeynman2@physics.sci', 'rfeyn2', 'password');
+INSERT INTO members VALUES ('Ricky', 'Prodactor', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rprodacor1@randum.com', 'rprod1', 'password');
+INSERT INTO members VALUES ('Renaldo', 'Prodactor', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rprodacor2@randum.com', 'rprod2', 'password');
+INSERT INTO members VALUES ('Reyray', 'Prodactor', '123 yay ln', 'stockon', 'ca', '95211', '209-123-1234', 'rprodacor3@randum.com', 'rprod3', 'password');
+INSERT INTO members VALUES ('John', 'Johnson', '999 howdy ln.', 'Hardey', 'ak', '99961', '209-999-9898', 'jjohn@randum.com', 'jjohn1', 'password');
+INSERT INTO members VALUES ('KahnKohl', 'Krabby', '666 Diablo ln.', 'stockon', 'ca', '95211', '209-666-7676', 'kkk@randum.com', 'kkk', 'password');
+INSERT INTO members VALUES ('Apple', 'Seed', '121 Hardy pl.', 'stockon', 'ca', '95211', '209-987-7890', 'aSeed@randum.com', 'aseed', 'password');

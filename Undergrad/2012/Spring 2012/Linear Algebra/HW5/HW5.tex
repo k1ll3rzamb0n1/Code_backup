@@ -1,0 +1,567 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{amssymb}
+
+\title{Exercise Set 5}
+\author{Ryan C. Bleile}
+
+\begin{document}
+\maketitle
+
+\section{}
+
+\subsection*{a}
+
+$ T_{1}:\ \mathbb{R}^{2} \rightarrow \mathbb{R_{2}} $, the action is a rotation by $\theta$ degrees (counter-clock-wise)\\
+
+In order to find the Range and NullSpace of this transformation we can begin by expressing the transformation in terms of a matrix. From previous work we derive the rotation operation to be:\\
+\[
+T_{1} = 
+\begin{bmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\]
+
+In order to find the NullSpace of T we can begin by finding what vector inputs when multiplied by $T_{1}$ produce the zero vector, or:
+\[
+Null(T_{1}) = 
+\begin{bmatrix}
+\cos \theta & -\sin \theta\\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+\]
+Preforming the Matrix Vector multiplication we find:
+\[
+\begin{bmatrix}
+x \cos \theta & - y \sin \theta\\
+x \sin \theta & y \cos \theta
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}
+\]
+
+We can solve this set of equations to find for what values of x and y we will output the zero vector.\\
+\begin{eqnarray}
+x \cos \theta - y \sin \theta &=& 0\\
+x \sin \theta + y \cos \theta &=& 0
+\end{eqnarray}
+\begin{eqnarray*}
+x \cos \theta &=& y \sin \theta \\
+x &=& y \tan \theta\\
+AND\\
+x \sin \theta &=& y \cos \theta\\
+x &=& -y \cot \theta
+\end{eqnarray*}
+
+If we take these two expressions than this is saying that:
+$$ y \tan \theta = -y \cot \theta $$
+In order for this to be true for all possible values of theta y must equal zero. If y equals zero than from our above expressions x must also equal zero. This means that the NullSpace of $T_{0}$ is the zero vector.
+$$ null(T_{1}) = \{\ \vec{0}\ \} $$
+
+To find the range of $T_{1}$ we will use our expression for the output of $T_{1}$ and we will simplify the results to express all possible outputs from the Transform $T_{1}$. So, the outputs are:
+
+\[
+\begin{bmatrix}
+x \cos \theta & - y \sin \theta\\
+x \sin \theta & y \cos \theta
+\end{bmatrix}
+=
+x
+\begin{bmatrix}
+\cos \theta\\
+\sin \theta
+\end{bmatrix}
++ y
+\begin{bmatrix}
+- \sin \theta\\
+\cos \theta
+\end{bmatrix}
+=
+C_{1}
+\begin{bmatrix}
+1\\
+\tan \theta
+\end{bmatrix}
++
+C_{2}
+\begin{bmatrix}
+- \tan \theta\\
+1
+\end{bmatrix}
+\]
+
+So we can see that the range of $T_{1}$ is:
+\[
+Ran(T_{1}) = \{
+C_{1}
+\begin{bmatrix}
+1\\
+\tan \theta
+\end{bmatrix}
++
+C_{2}
+\begin{bmatrix}
+- \tan \theta\\
+1
+\end{bmatrix}
+|
+C_{1}, C_{2} \in \mathbb{R}
+\}
+\]
+
+\subsection*{b}
+
+Using the same type of arguments as for the first part we can walk find the NullSpace and Range of $T_{2}$.
+$$T_{2} = f \rightarrow \int_{0}^{1} t f(t) dt$$
+Where the domain of $T_{2}$ is $P^{3}$. $P^{3}$ can be represented as:
+\[ 
+a_{0} + a_{1} t + a_{2} t^{2} + a_{3} t^{3} \equiv 
+\begin{bmatrix}
+a_{0}\\
+a_{1}\\
+a_{2}\\
+a_{3}
+\end{bmatrix}
+\]
+
+If we preform the integration once we can work backwards to write out a matrix of $T_{2}$. 
+
+\begin{eqnarray*}
+\int_{0}^{1} (a_{0}t + a_{1} t^{2} + a_{2} t^{3} + a_{3} t^{4}) dt\\
+\frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5}\\
+\end{eqnarray*}
+which in vector form is:
+\[
+\begin{bmatrix}
+\frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5}\\
+0\\
+0\\
+0
+\end{bmatrix}
+\]
+
+We can now use this and the input vector to rebuild the matrix representation for $T_{2}$ giving us:
+\[
+mat(T_{2}) =
+\begin{bmatrix}
+\frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \frac{1}{5}\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+The NullSpace of $T_{2}$ is found to be when:
+
+$$\frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5} = 0 $$
+
+Which means that:
+
+$$ null(T_{2}) = \{ \frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5} = 0 | a_{0}, a_{1}, a_{2}, a_{3} \in \mathbb{R} \} $$
+
+and the Range of $T_{2}$ is found to be:
+\[
+( \frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5} )
+\begin{bmatrix}
+1\\
+0\\
+0\\
+0
+\end{bmatrix}
+\]
+
+and since $\frac{a_{0}}{2} + \frac{a_{1}}{3} + \frac{a_{2}}{4} + \frac{a_{3}}{5} = C \in \mathbb{R} $:
+
+\[
+ran(T_{2}) = \{ \
+C
+\begin{bmatrix}
+1\\
+0\\
+0\\
+0
+\end{bmatrix}
+|
+C \in \mathbb{R} \ \}
+\]
+
+\subsection*{c}
+
+For Transform $T_{3}$ we have the matrix:
+
+\[
+mat(T_{3}) =
+\begin{bmatrix}
+1 & 2 & 3\\
+0 & 3 & 3\\
+-2 & 5 & 9
+\end{bmatrix}
+\]
+
+We can us matrix vector multiplication to find the range of $T_{3}$
+
+\[
+\begin{bmatrix}
+1 & 2 & 3\\
+0 & 3 & 3\\
+-2 & 5 & 9
+\end{bmatrix}
+\begin{bmatrix}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1x_{1} + 2x_{2} + 3x_{3}\\
+0x_{1} + 3x_{2} + 3x_{3}\\
+-2x_{1}+ 5x_{2} + 9x_{3}
+\end{bmatrix}
+\]
+
+Which can be broken up into a linear combination of terms:
+
+\[
+x_{1}
+\begin{bmatrix}
+1\\
+0\\
+-2
+\end{bmatrix}
++
+x_{2}
+\begin{bmatrix}
+2\\
+3\\
+5
+\end{bmatrix}
++
+x_{3}
+\begin{bmatrix}
+0\\
+3\\
+9
+\end{bmatrix}
+\]
+
+And since $x_{1}, x_{2}, x_{3} \in \mathbb{R} $ we can write the range as:
+
+\[
+ran(T_{3}) =
+\{ \
+C_{1}
+\begin{bmatrix}
+1\\
+0\\
+-2
+\end{bmatrix}
++
+C_{2}
+\begin{bmatrix}
+2\\
+3\\
+5
+\end{bmatrix}
++
+C_{3}
+\begin{bmatrix}
+0\\
+1\\
+3
+\end{bmatrix}
+\ |
+C_{1}, C_{2}, C_{3} \in \mathbb{R} \ \}
+\]
+
+We can also find the null space by setting the generic input equal to the zero vector:
+
+\[
+\begin{bmatrix}
+1x_{1} + 2x_{2} + 3x_{3}\\
+0x_{1} + 3x_{2} + 3x_{3}\\
+-2x_{1}+ 5x_{2} + 9x_{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\]
+
+Solving this system of equations gives us the NullSpace to be:
+
+\[
+null(T_{3}) = 
+\{ \
+C
+\begin{bmatrix}
+1\\
+-\frac{1}{2}\\
+\frac{1}{2}
+\end{bmatrix}
+\ | \ 
+C \in \mathbb{R} \ \}
+\]
+
+
+\subsection*{d}
+
+$T_{4}$ is a Linear transformation which takes $f$ into $\frac{d^{2}f}{dx^{2}} - 9f$. The dom($T_{4}$) is all possible linear combinations of exponential functions.\\
+
+A linear combination of exponential functions can be described by the infinite set of possible exponential functions such that:\\
+
+dom($T_{4}$) = $ \{\ C_1 e^{f(x)_1} + C_2 e^{f(x)_2} + ...|\ C_1 , C_2, ... \in \mathbb{R} AND f(x)_1 , f(x)_2 \in$ the set of all function $\}$\\
+
+In order to preform the derivative of the domain the derivative will only work where the functions in the exponential are in the set of once differentiable functions. Preforming the derivative will produce the set:
+
+$$\{\ C_1 f'(x)_1 e^{f(x)_1} + C_2 f'(x)_2 e^{f(x)_2} + ... |\ C_1 , C_2 , ... \in \mathbb{R}\ AND\ f(x)_1 , f(x)_2 , ... \in C^{1}(\mathbb{R})  \ \}$$
+
+This new set is then the set of all linear combinations of once differentiable exponential functions multiplied by all differentiated functions. If we continue and take the second derivative which is half of the operation of $T_4$ we will produce the new set that is:
+
+$$\{\ C_1 (f'(x)^{2}_{1} + f''(x)_{1} )e^{f(x)_1} + C_2 ( f'(x)^{2}_{2} + f''(x)_{2} )e^{f(x)_2} + ... |\ C_1 , C_2 , ... \in \mathbb{R}\ $$
+$$ AND\ f(x)_1 , f(x)_2 , ... \in C^{2}(\mathbb{R})  \ \} $$
+
+Which is in words: The set of all linear combinations of exponential functions which are multiplied by a once differentiated function squared added to the second derivative of the function. If we now subtract from the second derivative of f 9 times f we can see that it will create a whole new function space such that:
+
+$$\{\ C_1 (f'(x)^{2}_{1} + f''(x)_{1} - 9)e^{f(x)_1} + C_2 ( f'(x)^{2}_{2} + f''(x)_{2} - 9 )e^{f(x)_2} + ... |\ C_1 , C_2 , ... \in \mathbb{R}\ $$
+$$AND\ f(x)_1 , f(x)_2 , ... \in C^{2}(\mathbb{R})  \ \} $$
+
+This set is different from the first in that it applies a restriction to the domain to be only those twice differentiable functions as well as adding that in each linear combination there are three terms to consider. One being the constant scalar, the second being the first derivative function squared added with the second derivative of subtracted by nine, and the third being the exponential function term. So, the range of $T_4$ acting on this domain is:
+
+$$ ran(T_4) = \{\ C_1 (f'(x)^{2}_{1} + f''(x)_{1} - 9)e^{f(x)_1} + C_2 ( f'(x)^{2}_{2} + f''(x)_{2} - 9 )e^{f(x)_2} + ... |\ C_1 , C_2 , ... \in \mathbb{R}\ $$
+$$AND\ f(x)_1 , f(x)_2 , ... \in C^{2}(\mathbb{R})  \ \}$$
+
+The null space is described by the combination of the inputs that would produce the zero output. This leaves us with an infinite set of possibilities, the first being the all zero input (the trivial inputs), the second set is the set of all inputs such that every function in the space is exactly cancelled with another function in the space. So that the null space can be described as:\\
+
+null($T_{4}$) = $\{\ $ The set of all linear combinations possible that will exactly equal to zero, every term has an exactly opposing term - (including the all zero input vector) $\ \}$ 
+
+
+\section{}
+
+\subsection*{a}
+
+\[
+mat(T) = 
+\begin{bmatrix}
+1 & 2 & 3\\
+2 & -1 & 0\\
+3 & 1 & 3 
+\end{bmatrix}
+\]
+
+In order to find the set of all solutions to this given matrix we will use the theorem proposed in the hand out, which requires that we know the NullSpace of mat($T$) and we find one particular solution for the problem.\\
+
+The NullSpace of mat($T$) is when 
+
+\[
+mat(T) = 
+\begin{bmatrix}
+1 & 2 & 3\\
+2 & -1 & 0\\
+3 & 1 & 3 
+\end{bmatrix}
+\begin{bmatrix}
+x{1}\\
+x_{2}\\
+x_{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\]
+
+Which if we write out a generic output and solve the system of equations, we will be able to find the NullSpace of T.
+
+\[
+\begin{bmatrix}
+x{1} + 2x_{2} + 3x_{3}\\
+2x{1} + -1x_{2} + 0x_{3}\\
+x3{1} + 1x_{2} + 3x_{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}
+\]
+
+\begin{eqnarray*}
+x{1} + 2x_{2} + 3x_{3} &=& 0 \\
+2x{1} + -1x_{2} + 0x_{3} &=& 0 \\
+x3{1} + 1x_{2} + 3x_{3} &=& 0 \\
+x_{2} &=& 2x_{1}\\
+x_{3} &=& -\frac{5}{3}x_{1}
+\end{eqnarray*}
+
+Giving us:
+
+\[
+\begin{bmatrix}
+x_{1}\\
+2x_{1}\\
+-\frac{5}{3}x_{1}
+\end{bmatrix}
+\]
+Which we can reduce to find that the NullSpace of T is:
+\[
+null(T) = 
+\{ \ C
+\begin{bmatrix}
+1\\
+2\\
+-\frac{5}{3}
+\end{bmatrix}
+\ | \
+C \in \mathbb{R} \ \}
+\]
+
+We can also solve the system of equations for a particular solution outside of the NullSpace which satisfies the output. One particular solution is:\\
+\[
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+\]
+
+Using our theorem that was proved in the handout we know that the general solution to this system is the following:
+\[
+Inputs\ of\ T =
+\{ \ 
+\begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
++
+C
+\begin{bmatrix}
+1\\
+2\\
+-\frac{5}{3}
+\end{bmatrix}
+\ | \
+C \in \mathbb{R} \ 
+\}
+\]
+
+Such that all inputs of T which produce this output will differ from a particular solution by a element of the null space.
+
+\subsection*{b}
+
+We can apply the same theorem in order to solve this differential equation without having to solve it using ODE methods.
+$$ \frac{dy}{dx} + y = \sin (x) $$
+First we must find the null space of this linear transformation. Thinking about what we know about common differential equations we need a function that when differentiated and then added with itself will produce zero. The generic solution to this statement is given by an exponential which can be generically written as : $y = Ce^{-x}$. This exponential when differentiated and added to itself will produce zero and therefore is the null space of the transformation.\\
+
+Secondly, a particular solution for this set-up can be given by a sum of sine functions with cosine functions, such that: $y = \frac{1}{2}(-\sin (x) + \cos (x))$. When this y is added to its derivative it will produce only : $\sin (x)$.\\
+
+So using the same theorem above:
+$$ y = \frac{1}{2}(-\sin (x) + \cos (x)) + Ce^{-x} $$ which is the solution to our differential equation. 
+
+
+\section{}
+
+One example of a linear transformation that takes $\mathbb{R}^{4}$ into $\mathbb{R}^{3}$ and whose null space is 2 dimensional is:
+\[
+mat(T) = 
+\begin{bmatrix}
+1 & 2 & 0 & 0\\
+1 & 2 & 0 & 0\\
+0 & 0 & 1 & -1
+\end{bmatrix}
+\]
+
+The NullSpace of this matrix is:
+
+\[
+null(T) = 
+\{ \ 
+C_{1}
+\begin{bmatrix}
+1\\
+-\frac{1}{2}\\
+0\\
+0
+\end{bmatrix}
++
+C_{2}
+\begin{bmatrix}
+0\\
+0\\
+1\\
+1\\
+\end{bmatrix}
+\ | \ 
+C_{1}, C_{2} \in \mathbb{R}
+\ \}
+\]
+
+And we can find the range of this matrix to be:
+
+\[
+ran(T) = 
+\{ \ 
+C_{1}
+\begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}
++
+C_{2}
+\begin{bmatrix}
+0\\
+0\\
+1\\
+\end{bmatrix}
+\ | \ 
+C_{1}, C_{2} \in \mathbb{R}
+\ \}
+\]
+
+\section{}
+
+If the Linear transformation, S, has a NullSpace = 
+\[
+\{ \ C
+\begin{bmatrix}
+1\\
+3
+\end{bmatrix}
+| \ C \in \mathbb{R} \}
+\]
+And it has a Range = 
+\[
+\{ \ C
+\begin{bmatrix}
+3\\
+-1
+\end{bmatrix}
+| \ C \in \mathbb{R} \}
+\]
+than the entire null space does not fall within the range of the transformation, and it in-fact intersects the range at exactly one point, the zero vector.\\
+
+If we assume that S can be a valid Linear transformation with these characteristics, than S's NullSpace that lies within the range is Null = \{ $\vec{0}$ \}, since this is the only point in the defined null space that lies within the range.\\
+
+However if we say that the NullSpace must be a subspace of the range than in order to produce all but one point in the Nullspace we must have values that lie outside the range. Therefore S cannot have this NullSpace and range.  
+\end{document}
